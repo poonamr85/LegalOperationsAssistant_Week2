@@ -1,10 +1,10 @@
 entrypoint = "app.py"
-run = ["python", "-m", "scripts.start_app"]
+run = [".venv/bin/python", "-m", "scripts.start_app"]
 
 [[ports]]
 localPort = 8501
 externalPort = 80
 
 [deployment]
-build = ["sh", "-c", "python -m pip install -r requirements.txt"]
-run = ["python", "-m", "scripts.start_app"]
+build = ["python", "-m", "scripts.build_environment"]
+run = [".venv/bin/python", "-m", "scripts.start_app"]

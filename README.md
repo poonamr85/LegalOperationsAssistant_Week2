@@ -188,3 +188,13 @@ individual network operations.
 See [REPLIT_SETUP.md](REPLIT_SETUP.md). Build the upload ZIP after changes with
 `python -m scripts.package_replit`. No Git push, deployment or automatic creation
 of paid Pinecone resources is part of that command.
+
+## Replit publishing environment
+
+The UI dependencies are Streamlit 1.66.1 and Pillow 13.0.0. Replit's protected
+system Python must not be modified with pip. `.replit` uses
+`python -m scripts.build_environment` to create/bootstrap `.venv`, install the
+pinned dependencies with user installs disabled and check compatibility. Its run
+command is `.venv/bin/python -m scripts.start_app`. Base Python must include
+`venv` and `ensurepip`; package firewall settings are preserved.
+See REPLIT_SETUP.md for deployment secrets, port and access configuration.
