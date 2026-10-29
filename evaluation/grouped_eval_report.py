@@ -39,7 +39,8 @@ def build_report(dataset_path=None,baseline_path=None,output=None):
         counts[key]={'label':label,'dataset_count':len(group),'saved_results_count':len(measured),
             'not_run_count':len(group)-len(measured),'successful_expected_handling':succeeded,
             'handling_rate_percent':round(100*succeeded/len(measured),2) if measured and succeeded is not None else None}
-    current_hash=hashlib.sha256((ROOT/'storage/index.json').read_bytes()).hexdigest()
+    manifest_path=ROOT/'storage/index.json'
+    current_hash=hashlib.sha256(manifest_path.read_bytes()).hexdigest() if manifest_path.exists() else None
     report={'generated_at':datetime.now(timezone.utc).isoformat(),
         'source':'Saved 20-query baseline; no new inference or quality assessment calls',
         'baseline_created_at':baseline['created_at'],'baseline_index_sha256':baseline['index_sha256'],

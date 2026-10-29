@@ -388,19 +388,25 @@ class PerformanceTests(unittest.TestCase):
             root=Path(tmp)
             (root/'storage').mkdir()
             manifest=root/'storage/index.json'
-            manifest.write_text(json.dumps({'collection':'one','documents':[]}))
+            manifest.write_text(json.dumps({'namespace':'one','documents':[]}))
             with patch('legal_assistant.retriever.ROOT',root),patch('legal_assistant.retriever.HybridRetriever',side_effect=[object(),object()]) as factory:
                 first=retriever.get_retriever()
                 self.assertIs(first,retriever.get_retriever())
-                manifest.write_text(json.dumps({'collection':'two','documents':[]}))
+                manifest.write_text(json.dumps({'namespace':'two','documents':[]}))
                 second=retriever.get_retriever()
                 self.assertIsNot(first,second)
                 self.assertEqual(factory.call_count,2)
 
     def test_bm25_built_once_and_scope_remains_filtered(self):
         from legal_assistant import retriever
-        with patch('legal_assistant.retriever.BM25Okapi',wraps=retriever.BM25Okapi) as factory:
-            resource=retriever.HybridRetriever()
+        from unittest.mock import MagicMock
+        from legal_assistant.embeddings import MODEL_ID
+        docs=load_documents(ROOT/'data')
+        manifest={'vector_store':'pinecone','embedding_model':MODEL_ID,'index_name':'fixture','host':'fixture.pinecone.io','namespace':'test','documents':docs}
+        index=MagicMock()
+        index.query.return_value={'matches':[{'id':docs[0]['id'],'score':0.8}]}
+        with patch('legal_assistant.retriever.BM25Okapi',wraps=retriever.BM25Okapi) as factory, patch('legal_assistant.retriever.connection_settings',return_value=('fixture','fixture.pinecone.io')):
+            resource=retriever.HybridRetriever(manifest=manifest,index=index)
             built=factory.call_count
             results=resource.search('How do I request contract review?','ExampleCo (fictional)','2026.1')
             resource.search('Can I send an NDA?','ExampleCo (fictional)','2026.1')

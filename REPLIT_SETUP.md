@@ -1,49 +1,54 @@
-# Replit fictional-data demo
+# Replit: Pinecone fictional-data demo
 
-1. Extract `dist/legal_operations_replit.zip` and upload its contents into a Python
-   Replit project. Include hidden `.replit` and `.streamlit/config.toml` files.
-   Do not upload your local `.env` or `.venv`.
-2. Select Python 3.14 if available (the local tested runtime). Other supported
-   versions need a clean install and tests on Replit before publishing. This
-   package has not been tested on Replit/Linux yet. Direct dependencies are pinned;
-   transitive dependencies are not fully locked.
-3. In Tools > Secrets, set `NEBIUS_API_KEY`. Copy non-sensitive configuration
-   values from `.env.example` into Replit configurations, including provider,
-   endpoint and model names. Do not paste a local `.env` into a public repository.
-   Ensure the published deployment receives the same configuration.
-4. In the Shell, run:
+This migration is on `feature/pinecone`; `main` still contains Chroma until a later
+review/merge. Import the migrated branch after it has been pushed, or extract the
+latest `dist/legal_operations_replit.zip` and upload its contents. Include hidden
+`.replit` and `.streamlit/config.toml`. Never upload `.env` or `.venv`.
+
+1. The compatible index `legal-operations-minilm-vectors` is populated with 49
+   passages. Use its host from your local `.env`. Required settings are: bring-your-own vectors, 384 dimensions, cosine.
+   A 384-dimensional hosted Llama embedding index is not interchangeable with
+   MiniLM. The code rejects hosted-embedding schemas. The one-time `scripts.create_pinecone_index` setup script was used to create
+   this index; normal app startup never creates or deletes indexes.
+2. Set `PINECONE_API_KEY` and `NEBIUS_API_KEY` in Replit Secrets. Set index name,
+   host, namespace prefix, provider endpoint and model names from `.env.example`
+   in Configurations. Ensure published deployments receive these variables.
+3. Install and run local regression checks from the project root:
 
    ```bash
    python -m pip install -r requirements.txt
-   python -m scripts.prepare_app
    python -m unittest discover -s tests -t . -v
    ```
 
-5. Click Run (or run `python -m scripts.start_app`). Startup rebuilds the index before
-   starting Streamlit on port 8501. Initial downloads require outbound internet
-   and may take longer. Index preparation does not call Nebius. Failure stops
-   startup, rather than serving an unprepared app. Do not also launch a second
-   server on the same port.
-6. Open Preview. Preparation is per server startup, never per chat or Streamlit
-   rerun. The small bundled dataset makes the index reconstructible after a
-   restart; runtime files and chat sessions are not durable storage.
-7. Publish as a single-instance backend deployment; Reserved VM is an option
-   for an always-on demo. Confirm the build/run commands from `.replit` and
-   expose port 8501. Do not select Static hosting. Restrict demo access before
-   sharing, since chat questions spend your Nebius allowance.
-8. Verify a fresh restart and the portal. Live questions and live evaluation
-   make paid provider calls; run these only when intended. Local checks do not
-   establish deployment correctness or the 95% faithfulness target.
+   Tests mock Pinecone requests; initial MiniLM downloads need outbound internet.
+   Python 3.14 is tested locally. Linux/Replit dependency availability and hosting
+   must still be verified; direct versions are pinned, not every transitive package.
+4. The initial dataset is already uploaded. As an administrator, upload again
+   only when the bundled fictional documents or embedding implementation change:
 
-The upload bundle includes fictional source files, evaluation scripts and the
-original fictional 20-query report JSON required by grouped-report regression
-checks. That historical report is not a measurement of the new deployment. It
-excludes credentials, installed libraries and the existing Chroma index.
+   ```bash
+   python -m legal_assistant.knowledge_base
+   ```
 
-Keep the existing data exclusions in `.gitignore`: this bundle transfers the
-explicitly selected fictional files without opening future private files to Git.
-For real employee documents, authentication, document permissions, approved
-hosted processing and durable operational logging require separate work.
+   This incurs Pinecone operations but no Nebius calls. Do not put it in the
+   deployment run command. It is safe to rerun for the same snapshot, although
+   repeated uploads incur writes. New document snapshots use different namespaces;
+   older snapshots remain until explicitly cleaned up.
+5. Click Run or use `python -m scripts.start_app`. Startup verifies the existing
+   snapshot and creates the local manifest, then starts Streamlit on port 8501.
+   It does not upload/rebuild remote vectors. First model download may be slow.
+   Startup fails if the remote snapshot is missing; run Step 4 rather than trying
+   to serve an empty index. Do not start a second server on the same port.
+6. After Preview loads, configure a single-instance backend deployment. Reserved
+   VM is an always-on option with ongoing cost; Static hosting cannot run Python.
+   Build: `python -m pip install -r requirements.txt`.
+   Run: `python -m scripts.start_app`. Expose internal port 8501.
+7. Confirm restart behavior and restrict demo access. Normal chat and live
+   evaluation use paid Nebius calls; Pinecone queries also consume service usage.
+   Neither live answers nor Replit hosting were verified during offline tests.
 
-After local changes, regenerate the upload ZIP with `python -m scripts.package_replit`.
-Run these module commands from the project root; the package directories must stay intact.
+Generate the updated upload ZIP with `python -m scripts.package_replit`. The ZIP
+includes fictional samples and one historical evaluation JSON needed by regression
+tests, but excludes credentials, indexes and model caches. Saved Word guides and
+architecture images still describe the former Chroma version; use README.md for
+current implementation details. Keep real employee data out of this prototype.

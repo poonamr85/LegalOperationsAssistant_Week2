@@ -4,7 +4,9 @@ import re
 from functools import lru_cache
 from threading import RLock
 from rank_bm25 import BM25Okapi
-from legal_assistant.knowledge_base import ROOT, CHROMA_PATH
+from legal_assistant.knowledge_base import ROOT
+from legal_assistant.embeddings import embed_texts, MODEL_ID
+from legal_assistant.vector_store import connect_index, connection_settings
 
 def tokenize(text):
     return re.findall(r"[a-z0-9]+", text.lower())
@@ -34,13 +36,16 @@ def deduplicate_passages(passages, limit):
 
 
 class HybridRetriever:
-    def __init__(self, manifest=None, chroma_path=None):
-        import chromadb
-        from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
+    def __init__(self, manifest=None, index=None):
         manifest = manifest if manifest is not None else json.loads((ROOT / "storage/index.json").read_text())
+        if manifest.get("vector_store") != "pinecone" or manifest.get("embedding_model") != MODEL_ID:
+            raise ValueError("Prepare the Pinecone index before searching")
+        name,host=connection_settings()
+        if (name,host)!=(manifest['index_name'],manifest['host']):
+            raise ValueError("Pinecone configuration differs from the prepared index")
         self.documents = manifest["documents"]
-        self.collection = chromadb.PersistentClient(path=str(chroma_path or CHROMA_PATH)).get_collection(
-            manifest["collection"], embedding_function=DefaultEmbeddingFunction())
+        self.index = index if index is not None else connect_index()
+        self.namespace = manifest['namespace']
 
         self._lock = RLock()
         self.scopes = {}
@@ -69,10 +74,12 @@ class HybridRetriever:
         bm25 = self.indexes[key]
         scores = bm25.get_scores(tokenize(question))
         lexical = [docs[i]["id"] for i in sorted(range(len(docs)), key=lambda i: scores[i], reverse=True) if scores[i] > 0][:12]
-        result = self.collection.query(query_texts=[question], n_results=min(12, len(docs)),
-            where={"$and": [{"organization": organization}, {"policy_version": policy_version}, {"access_scope": "demo"}, {"synthetic": True}, {"approval_status": "approved"}]})
-        semantic = result["ids"][0]
-        similarity = dict(zip(semantic, [1 - d for d in result["distances"][0]]))
+        result = self.index.query(vector=embed_texts([question])[0], namespace=self.namespace,
+            top_k=min(12,len(docs)), include_metadata=False,
+            filter={"$and": [{"organization": {"$eq":organization}}, {"policy_version": {"$eq":policy_version}},
+                    {"access_scope":{"$eq":"demo"}}, {"synthetic":{"$eq":True}}, {"approval_status":{"$eq":"approved"}}]})
+        semantic=[match['id'] for match in result['matches'] if match['id'] in by_id]
+        similarity={match['id']:match['score'] for match in result['matches']}
         fusion = {}
         for ranking in (lexical, semantic):
             for rank, ident in enumerate(ranking, 1):
@@ -83,12 +90,12 @@ class HybridRetriever:
 
 
 @lru_cache(maxsize=2)
-def _cached_retriever(manifest_text, chroma_path):
-    return HybridRetriever(manifest=json.loads(manifest_text), chroma_path=chroma_path)
+def _cached_retriever(manifest_text, credential):
+    return HybridRetriever(manifest=json.loads(manifest_text))
 
 
 def get_retriever():
     # An atomic manifest switch or metadata change changes the cache key.
     # No question/answer is cached, and organization filtering remains per search.
     manifest_text = (ROOT / "storage/index.json").read_text()
-    return _cached_retriever(manifest_text, str(CHROMA_PATH))
+    return _cached_retriever(manifest_text, os.getenv("PINECONE_API_KEY", ""))

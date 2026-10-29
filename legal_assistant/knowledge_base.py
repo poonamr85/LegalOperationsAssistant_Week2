@@ -1,15 +1,15 @@
-"""Configuration, JSON/PDF loading, and persistent Chroma index construction."""
+"""Configuration, JSON/PDF loading, and Pinecone index preparation."""
 import json
 import os
 import uuid
+import hashlib
+import time
 from datetime import date
 from pathlib import Path
 from dotenv import load_dotenv
 from legal_assistant.chunking import chunk_text, token_count, CHUNKING_VERSION, MAX_TOKENS, OVERLAP_TOKENS
 ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
-CHROMA_PATH = ROOT / os.getenv("CHROMA_PATH", "storage/chroma")
-CHROMA_COLLECTION = os.getenv("CHROMA_COLLECTION", "legal_operations")
 LLM_PROVIDER = (os.getenv("LLM_PROVIDER") or "nebius").strip().lower()
 LLM_BASE_URL = os.getenv("LLM_BASE_URL") or (
     "https://api.tokenfactory.nebius.com/v1" if LLM_PROVIDER == "nebius"
@@ -113,26 +113,42 @@ def load_documents(data_dir):
         raise ValueError("No current approved synthetic demo records found in the legal data folders.")
     return documents
 
-def build_index():
-    """Build a new collection, then atomically switch the active-index manifest."""
-    import chromadb
-    from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
+def build_index(upload=True):
+    """Publish a verified snapshot; runtime preparation only verifies, never uploads."""
+    from legal_assistant.embeddings import MODEL_ID, embed_texts
+    from legal_assistant.vector_store import connect_index, connection_settings
     documents = load_documents(ROOT / "data")
-    client = chromadb.PersistentClient(path=str(CHROMA_PATH))
-    name = f"{CHROMA_COLLECTION}-{uuid.uuid4().hex[:12]}"
-    collection = client.create_collection(name, metadata={"hnsw:space": "cosine"}, embedding_function=DefaultEmbeddingFunction())
-    for start in range(0, len(documents), 32):
-        batch = documents[start:start + 32]
-        collection.add(ids=[d["id"] for d in batch], documents=[d["text"] for d in batch], metadatas=[d["metadata"] for d in batch])
-    storage = ROOT / "storage"
+    name,host=connection_settings()
+    digest=hashlib.sha256(json.dumps({"documents":documents,"model":MODEL_ID},sort_keys=True).encode()).hexdigest()[:20]
+    namespace=os.getenv("PINECONE_NAMESPACE","legal-demo").strip()+"-"+digest
+    index=connect_index(validate=True)
+    if upload:
+        for start in range(0,len(documents),32):
+            batch=documents[start:start+32]
+            embeddings=embed_texts([d['text'] for d in batch])
+            index.upsert(vectors=[{"id":d['id'],"values":vector,
+                         "metadata":{**d['metadata'],"text":d['text']}} for d,vector in zip(batch,embeddings)],namespace=namespace)
+    # Pinecone is eventually consistent. Do not publish an unready local snapshot.
+    deadline=time.monotonic()+(30 if upload else 0)
+    while True:
+        stats=index.describe_index_stats()
+        namespace_stats=stats.get('namespaces',{}).get(namespace,{})
+        count=namespace_stats.get('vector_count',namespace_stats.get('record_count',0))
+        if count==len(documents):
+            fetched=index.fetch(ids=[d['id'] for d in documents],namespace=namespace)
+            if set(fetched.get('vectors',{}))=={d['id'] for d in documents}: break
+        if time.monotonic()>=deadline:
+            raise ValueError('Pinecone snapshot not ready. Run python -m legal_assistant.knowledge_base to index this dataset.')
+        time.sleep(1)
+    manifest={"vector_store":"pinecone","index_name":name,"host":host,"namespace":namespace,
+              "embedding_model":MODEL_ID,"chunking":{"version":CHUNKING_VERSION,"max_tokens":MAX_TOKENS,"overlap_tokens":OVERLAP_TOKENS},
+              "documents":documents}
+    storage=ROOT/"storage"
     storage.mkdir(exist_ok=True)
-    manifest = {"collection": name, "embedding_model": "all-MiniLM-L6-v2",
-                "chunking": {"version": CHUNKING_VERSION, "max_tokens": MAX_TOKENS, "overlap_tokens": OVERLAP_TOKENS},
-                "documents": documents}
-    temporary = storage / f"index-{uuid.uuid4().hex}.tmp"
+    temporary=storage/f"index-{uuid.uuid4().hex}.tmp"
     temporary.write_text(json.dumps(manifest))
-    temporary.replace(storage / "index.json")
+    temporary.replace(storage/"index.json")
     return len(documents)
 
-if __name__ == "__main__":
-    print(f"Indexed {build_index()} passages.")
+if __name__ == '__main__':
+    print(f"Indexed {build_index()} passages in Pinecone.")

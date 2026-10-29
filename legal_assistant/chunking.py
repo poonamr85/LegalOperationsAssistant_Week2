@@ -1,4 +1,4 @@
-"""Section-aware passage splitting using the same WordPiece tokenizer as Chroma MiniLM."""
+"""Section-aware passage splitting using the MiniLM WordPiece tokenizer."""
 import re
 from functools import lru_cache
 from pathlib import Path
@@ -10,17 +10,8 @@ CHUNKING_VERSION = 'sections-sentences-v1'
 
 @lru_cache(maxsize=1)
 def get_tokenizer():
-    from tokenizers import Tokenizer
-    from chromadb.utils.embedding_functions import ONNXMiniLM_L6_V2
-    path = Path(ONNXMiniLM_L6_V2.DOWNLOAD_PATH) / ONNXMiniLM_L6_V2.EXTRACTED_FOLDER_NAME / 'tokenizer.json'
-    if not path.exists():
-        # The standard embedding call handles Chroma's first-run model download.
-        ONNXMiniLM_L6_V2()(input=['Initialize local embedding tokenizer.'])
-    tokenizer = Tokenizer.from_file(str(path))
-    # Count the full input instead of silently truncating or counting padding.
-    tokenizer.no_truncation()
-    tokenizer.no_padding()
-    return tokenizer
+    from legal_assistant.embeddings import counting_tokenizer
+    return counting_tokenizer()
 
 
 def token_count(text):

@@ -310,5 +310,5 @@ def pipeline_error_message(exc, stage="answer"):
     if name in {"NotFoundError", "PermissionDeniedError"}:
         return f"The configured {label} model is unavailable or access is denied. Check model names and account permissions."
     if stage == "search":
-        return "Document search failed. Ask the application administrator to rebuild the search index and check that the local embedding model is available."
+        return "Document search failed. Ask the administrator to check Pinecone credentials, index configuration, snapshot readiness and local embedding assets."
     return "Evidence grading, answer generation, or claim validation failed. Retry; if it continues, check the model configuration and API availability."
