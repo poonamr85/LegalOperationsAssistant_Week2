@@ -1,0 +1,61 @@
+{
+  "dataset": "Fictional ExampleCo policy for demonstration only. Not actual company policy or legal advice.",
+  "synthetic": true,
+  "schema_version": "1.0",
+  "records": [
+    {
+      "id": "POL-DATA-010",
+      "source_id": "POL-DATA-010",
+      "source_type": "policy",
+      "title": "Fictional Vendor data retention and deletion",
+      "text": "During Privacy review, document the proposed retention period, business justification, deletion method, backup handling, and responsible owner for vendor-held employee data. Use the approved retention schedule; this sample policy does not specify a universal number of days. Obtain required review before sharing data. If an active legal hold covers the records, preserve them and contact the Legal hold owner before deletion.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-DATA-010",
+      "topic_group": "privacy_and_vendor_onboarding"
+    },
+    {
+      "id": "POL-DATA-011",
+      "source_id": "POL-DATA-011",
+      "source_type": "policy",
+      "title": "Fictional Employee personal data requests",
+      "text": "Route an employee request to access, correct, or delete their personal information to the designated Privacy intake channel. Record when it was received, the requested action, and the relevant system without collecting unnecessary details. Do not promise an outcome or legal response deadline. Privacy coordinates identity checks, applicable requirements, and the response. This assistant cannot verify identity or fulfill the request.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-DATA-011",
+      "topic_group": "privacy_and_vendor_onboarding"
+    },
+    {
+      "id": "POL-DATA-012",
+      "source_id": "POL-DATA-012",
+      "source_type": "policy",
+      "title": "Fictional Suspected vendor personal data exposure",
+      "text": "For suspected loss, unauthorized access, or accidental disclosure of vendor-held employee information, immediately notify Security and Legal using the approved incident process and involve Privacy. Record the vendor, time discovered, and known facts. Preserve records and avoid speculation. Do not independently promise notification timing, contact regulators, or declare that no breach occurred; the responsible teams assess the incident.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-DATA-012",
+      "topic_group": "privacy_and_vendor_onboarding"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "POL-PDF-001",
+  "source_id": "POL-PDF-001",
+  "source_type": "policy",
+  "title": "Fictional External AI Tools Policy",
+  "organization": "ExampleCo (fictional)",
+  "policy_version": "2026.1",
+  "jurisdiction": "Illustrative company procedure; not a statement of law",
+  "updated_at": "2026-10-20",
+  "effective_from": "2026-10-01",
+  "document_status": "current",
+  "approval_status": "approved",
+  "access_scope": "demo",
+  "synthetic": true
+}

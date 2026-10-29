@@ -1,0 +1,25 @@
+{
+  "dataset": "Fictional clarification procedure; no actual company policy or approval.",
+  "synthetic": true,
+  "schema_version": "1.0",
+  "records": [
+    {
+      "id": "POL-CLAR-NDA-001",
+      "source_id": "POL-CLAR-NDA-001",
+      "source_type": "policy",
+      "title": "Fictional NDA approval scope clarification",
+      "text": "When referring to an earlier NDA approval, identify the agreement, counterparty, approved template or edits, intended purpose, and approval record. Do not assume approval for one agreement covers another or that a business owner can sign. Legal reviews deviations and an authorized signatory executes the NDA. Ask Legal Operations to verify unclear approval scope before execution.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-23",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-CLAR-NDA-001",
+      "topic_group": "contracts_and_ndas"
+    }
+  ]
+}

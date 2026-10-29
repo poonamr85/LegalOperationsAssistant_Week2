@@ -1,0 +1,61 @@
+{
+  "dataset": "Fictional ExampleCo policy for demonstration only. Not actual company policy or legal advice.",
+  "synthetic": true,
+  "schema_version": "1.0",
+  "records": [
+    {
+      "id": "POL-VEND-020",
+      "source_id": "POL-VEND-020",
+      "source_type": "policy",
+      "title": "Fictional Vendor readiness and production access",
+      "text": "Before production access or employee-data sharing, the business owner must confirm with Procurement that required Legal, Security, and Privacy reviews and approvals are complete and that the agreement has been executed by an authorized signatory. An NDA, signed purchase order, or completed intake alone does not establish readiness. The assistant cannot verify approval status or authorize access. Ask the responsible teams to confirm readiness.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-VEND-020",
+      "topic_group": "privacy_and_vendor_onboarding"
+    },
+    {
+      "id": "POL-VEND-021",
+      "source_id": "POL-VEND-021",
+      "source_type": "policy",
+      "title": "Fictional Vendor renewal and material changes",
+      "text": "For a vendor renewal or material change in service, data use, system access, subcontractors, or hosting locations, submit the change to Procurement before implementation. Include the existing arrangement, proposed change, draft amendments, and requested date. Procurement coordinates the reviews required by Legal, Security, and Privacy. Prior onboarding approval does not automatically cover a materially changed arrangement.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-VEND-021",
+      "topic_group": "privacy_and_vendor_onboarding"
+    },
+    {
+      "id": "POL-VEND-022",
+      "source_id": "POL-VEND-022",
+      "source_type": "policy",
+      "title": "Fictional Vendor offboarding checklist",
+      "text": "When a vendor engagement ends, ask Procurement to coordinate offboarding with the business owner, IT, Security, and Privacy. Revoke access through the responsible system owners, recover company assets, and document the agreed return or deletion of company data and any required confirmation. Check applicable retention obligations and legal holds with Legal before deletion. Do not assume termination permits destroying all records.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-VEND-022",
+      "topic_group": "privacy_and_vendor_onboarding"
+    }
+  ]
+}

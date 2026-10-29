@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1040" viewBox="0 0 1800 1040"><rect width="100%" height="100%" fill="white"/>
+<text x="900" y="65" font-family="Arial,sans-serif" font-size="42" fill="#213547" text-anchor="middle" dominant-baseline="middle">Legal Operations Assistant</text>
+<text x="900" y="112" font-family="Arial,sans-serif" font-size="25" fill="#213547" text-anchor="middle" dominant-baseline="middle">Find policy evidence. Check the response. Answer or contact Legal.</text>
+<rect x="75" y="160" width="1650" height="125" rx="18" fill="#f4f7fb" stroke="#cbd5e1" stroke-width="2"/>
+<text x="900" y="192" font-family="Arial,sans-serif" font-size="21" fill="#213547" text-anchor="middle" dominant-baseline="middle">PREPARE THE KNOWLEDGE BASE • WHEN DOCUMENTS CHANGE</text>
+<text x="900" y="236" font-family="Arial,sans-serif" font-size="25" fill="#213547" text-anchor="middle" dominant-baseline="middle">Fictional FAQs, policies &amp; reviewed matters → Split passages → MiniLM embeddings → Chroma</text>
+<text x="80" y="340" font-family="Arial,sans-serif" font-size="22" fill="#213547" text-anchor="start" dominant-baseline="middle">EACH EMPLOYEE QUESTION</text>
+<rect x="30" y="415" width="140" height="150" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<text x="100" y="466" font-family="Arial,sans-serif" font-size="23" fill="#213547" text-anchor="middle" dominant-baseline="middle">Employee</text>
+<text x="100" y="508" font-family="Arial,sans-serif" font-size="23" fill="#213547" text-anchor="middle" dominant-baseline="middle">question</text>
+<polyline points="170,490 210,490" fill="none" stroke="#64748b" stroke-width="4"/>
+<polygon points="210,490 198,483 198,497" fill="#64748b"/>
+<rect x="210" y="395" width="345" height="190" rx="18" fill="#edf6ff" stroke="#3282b8" stroke-width="2"/>
+<text x="382" y="438" font-family="Arial,sans-serif" font-size="27" fill="#213547" text-anchor="middle" dominant-baseline="middle">1. Retrieve</text>
+<text x="382" y="493" font-family="Arial,sans-serif" font-size="23" fill="#213547" text-anchor="middle" dominant-baseline="middle">BM25 keywords +</text>
+<text x="382" y="529" font-family="Arial,sans-serif" font-size="23" fill="#213547" text-anchor="middle" dominant-baseline="middle">Chroma semantic search</text>
+<rect x="595" y="395" width="345" height="190" rx="18" fill="#f0f7e9" stroke="#6a9348" stroke-width="2"/>
+<text x="767" y="438" font-family="Arial,sans-serif" font-size="27" fill="#213547" text-anchor="middle" dominant-baseline="middle">2. Assess evidence</text>
+<text x="767" y="493" font-family="Arial,sans-serif" font-size="23" fill="#213547" text-anchor="middle" dominant-baseline="middle">Relevant and applicable?</text>
+<text x="767" y="529" font-family="Arial,sans-serif" font-size="23" fill="#213547" text-anchor="middle" dominant-baseline="middle">Enough support to proceed?</text>
+<rect x="980" y="395" width="345" height="190" rx="18" fill="#f5f0fc" stroke="#8a63b5" stroke-width="2"/>
+<text x="1152" y="438" font-family="Arial,sans-serif" font-size="27" fill="#213547" text-anchor="middle" dominant-baseline="middle">3. Draft response</text>
+<text x="1152" y="493" font-family="Arial,sans-serif" font-size="23" fill="#213547" text-anchor="middle" dominant-baseline="middle">Use selected evidence</text>
+<text x="1152" y="529" font-family="Arial,sans-serif" font-size="23" fill="#213547" text-anchor="middle" dominant-baseline="middle">Include source citations</text>
+<rect x="1365" y="395" width="345" height="190" rx="18" fill="#ecf8f7" stroke="#219295" stroke-width="2"/>
+<text x="1537" y="438" font-family="Arial,sans-serif" font-size="27" fill="#213547" text-anchor="middle" dominant-baseline="middle">4. Validate</text>
+<text x="1537" y="493" font-family="Arial,sans-serif" font-size="23" fill="#213547" text-anchor="middle" dominant-baseline="middle">Check citation IDs</text>
+<text x="1537" y="529" font-family="Arial,sans-serif" font-size="23" fill="#213547" text-anchor="middle" dominant-baseline="middle">Check factual claim support</text>
+<polyline points="555,490 595,490" fill="none" stroke="#64748b" stroke-width="4"/>
+<polygon points="595,490 583,483 583,497" fill="#64748b"/>
+<polyline points="940,490 980,490" fill="none" stroke="#64748b" stroke-width="4"/>
+<polygon points="980,490 968,483 968,497" fill="#64748b"/>
+<polyline points="1325,490 1365,490" fill="none" stroke="#64748b" stroke-width="4"/>
+<polygon points="1365,490 1353,483 1353,497" fill="#64748b"/>
+<polyline points="1537,585 1537,655" fill="none" stroke="#219295" stroke-width="4"/>
+<polygon points="1537,655 1530,643 1544,643" fill="#219295"/>
+<rect x="1310" y="655" width="420" height="100" rx="18" fill="#edf7ed" stroke="#5b9563" stroke-width="2"/>
+<text x="1520" y="689" font-family="Arial,sans-serif" font-size="25" fill="#213547" text-anchor="middle" dominant-baseline="middle">Display answer / clarification</text>
+<text x="1520" y="726" font-family="Arial,sans-serif" font-size="21" fill="#213547" text-anchor="middle" dominant-baseline="middle">Only after checks pass</text>
+<polyline points="382,585 382,810" fill="none" stroke="#bb695e" stroke-width="4"/>
+<polygon points="382,810 375,798 389,798" fill="#bb695e"/>
+<polyline points="767,585 767,810" fill="none" stroke="#bb695e" stroke-width="4"/>
+<polygon points="767,810 760,798 774,798" fill="#bb695e"/>
+<polyline points="1152,585 1152,810" fill="none" stroke="#bb695e" stroke-width="4"/>
+<polygon points="1152,810 1145,798 1159,798" fill="#bb695e"/>
+<polyline points="1385,585 1280,610 1280,790 1385,790 1385,810" fill="none" stroke="#bb695e" stroke-width="4"/>
+<polygon points="1385,810 1378,798 1392,798" fill="#bb695e"/>
+<rect x="210" y="810" width="1520" height="115" rx="18" fill="#fff3ef" stroke="#bb695e" stroke-width="2"/>
+<text x="970" y="848" font-family="Arial,sans-serif" font-size="27" fill="#a34d42" text-anchor="middle" dominant-baseline="middle">CONTACT LEGAL</text>
+<text x="970" y="891" font-family="Arial,sans-serif" font-size="23" fill="#213547" text-anchor="middle" dominant-baseline="middle">Insufficient evidence, human approval needed, or a failed check / processing error</text>
+<text x="900" y="970" font-family="Arial,sans-serif" font-size="22" fill="#213547" text-anchor="middle" dominant-baseline="middle">An explicit request for a human goes directly to Contact Legal.</text>
+<text x="900" y="1005" font-family="Arial,sans-serif" font-size="21" fill="#64748b" text-anchor="middle" dominant-baseline="middle">The prototype displays a contact message; it does not automatically notify Legal.</text>
+</svg>

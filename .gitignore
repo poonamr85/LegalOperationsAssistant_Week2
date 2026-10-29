@@ -1,0 +1,49 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+storage/*
+!storage/.gitkeep
+
+
+# Legal demonstration/input records may contain private company data.
+data/legal_faqs/*
+data/policies/*
+data/reviewed_matters/*
+
+# Locally generated upload bundles
+dist/
+
+# Local editor/assistant state and temporary files
+.DS_Store
+~$*
+.agents/
+.claude/
+.vscode/
+.streamlit/secrets.toml
+
+# Explicitly approved fictional samples; other data remains ignored.
+!data/legal_faqs/sample_legal.json
+!data/policies/confidential_information_handling.json
+!data/policies/fictional_ai_tools_policy.metadata.json
+!data/policies/fictional_ai_tools_policy.pdf
+!data/policies/nda_approval_scope.json
+!data/policies/nda_request_and_review.json
+!data/policies/privacy_retention_and_requests.json
+!data/policies/privacy_review_and_data_minimization.json
+!data/policies/privacy_sharing_context.json
+!data/policies/sample_legal.json
+!data/policies/vendor_change_context.json
+!data/policies/vendor_changes_and_offboarding.json
+!data/policies/vendor_due_diligence.json
+!data/reviewed_matters/sample_legal.json
+
+# Fictional historical baseline required by offline regression tests
+!storage/evaluations/
+storage/evaluations/*
+!storage/evaluations/resolution_20_queries/
+storage/evaluations/resolution_20_queries/*
+!storage/evaluations/resolution_20_queries/resolution_report.json

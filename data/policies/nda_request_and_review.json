@@ -1,0 +1,61 @@
+{
+  "dataset": "Fictional ExampleCo policy for demonstration only. Not actual company policy or legal advice.",
+  "synthetic": true,
+  "schema_version": "1.0",
+  "records": [
+    {
+      "id": "POL-NDA-010",
+      "source_id": "POL-NDA-010",
+      "source_type": "policy",
+      "title": "Fictional NDA intake checklist",
+      "text": "For an NDA request, use the current approved template and submit the counterparty legal name, business owner, discussion purpose, intended recipients, requested deadline, and any counterparty edits through Legal intake. Attach the proposed NDA and describe the information to be disclosed. Do not disclose confidential information before the required NDA is executed. A requested deadline does not guarantee completion.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-NDA-010",
+      "topic_group": "contracts_and_ndas"
+    },
+    {
+      "id": "POL-NDA-011",
+      "source_id": "POL-NDA-011",
+      "source_type": "policy",
+      "title": "Fictional Counterparty NDA and changed clauses",
+      "text": "If a counterparty supplies its own NDA or changes the approved template, send the document and marked changes to Legal through the intake form. Flag changes to confidentiality scope, permitted recipients, duration, liability, and governing law for review. Do not accept changes or represent that Legal approved them. Only an authorized signatory may execute the agreement.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-NDA-011",
+      "topic_group": "contracts_and_ndas"
+    },
+    {
+      "id": "POL-NDA-012",
+      "source_id": "POL-NDA-012",
+      "source_type": "policy",
+      "title": "Fictional Executed NDA handover",
+      "text": "After an NDA is fully executed, store the signed agreement in the approved contract repository with the counterparty name, business owner, agreement date, and permitted purpose. Give the business owner the executed copy. Check the documented restrictions before disclosure; ask Legal if a recipient, purpose, or disclosure is outside the agreement or unclear. Signing an NDA does not approve sharing personal data.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-NDA-012",
+      "topic_group": "contracts_and_ndas"
+    }
+  ]
+}

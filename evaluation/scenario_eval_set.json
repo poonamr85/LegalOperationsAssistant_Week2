@@ -1,0 +1,385 @@
+{
+  "name": "Grouped Legal Operations development scenarios",
+  "synthetic": true,
+  "schema_version": "1.0",
+  "review_status": "Authored development examples; not independently reviewed",
+  "notes": "Evaluation-only questions and expected examples. Not part of the indexed corpus. Ambiguous cases have not been run against Nebius.",
+  "cases": [
+    {
+      "question": "What should I do if a counterparty supplies its own NDA or changes the approved template?",
+      "expected_source": "POL-NDA-011",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-01",
+      "required_guidance": [
+        "Send a counterparty NDA or changed template and marked edits to Legal through intake.",
+        "Do not accept changes or represent that Legal approved them.",
+        "Only an authorized signatory executes the agreement."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Send a counterparty NDA or changed template and marked edits to Legal through intake. Do not accept changes or represent that Legal approved them. Only an authorized signatory executes the agreement.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "Can I use public links or personal email to share confidential pricing?",
+      "expected_source": "POL-CONF-010",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-02",
+      "required_guidance": [
+        "Do not use public links or personal email to share confidential pricing.",
+        "Use approved company tools with restricted access.",
+        "Share only with recipients who need it for the documented business purpose."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Do not use public links or personal email to share confidential pricing. Use approved company tools with restricted access. Share only with recipients who need it for the documented business purpose.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "What should happen before a vendor changes its data storage location?",
+      "expected_source": "POL-PRIV-012",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-03",
+      "required_guidance": [
+        "Submit the vendor storage-location change for Privacy review before implementation.",
+        "Include the existing arrangement and proposed change.",
+        "Do not assume earlier approval covers the new location."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Submit the vendor storage-location change for Privacy review before implementation. Include the existing arrangement and proposed change. Do not assume earlier approval covers the new location.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "Where should I route an employee request to access, correct, or delete personal information?",
+      "expected_source": "POL-DATA-011",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-04",
+      "required_guidance": [
+        "Route personal-data access, correction or deletion requests to the Privacy intake channel.",
+        "Privacy coordinates identity checks and the response.",
+        "Do not promise an outcome or legal response deadline."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Route personal-data access, correction or deletion requests to the Privacy intake channel. Privacy coordinates identity checks and the response. Do not promise an outcome or legal response deadline.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "What information is in the vendor security review package?",
+      "expected_source": "POL-VEND-011",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-05",
+      "required_guidance": [
+        "Provide service description, proposed access and data categories.",
+        "Provide hosting locations and available security questionnaires or assurance reports.",
+        "Security decides sufficiency; a report alone does not approve access."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Provide service description, proposed access and data categories. Provide hosting locations and available security questionnaires or assurance reports. Security decides sufficiency; a report alone does not approve access.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "What is the vendor offboarding checklist when an engagement ends?",
+      "expected_source": "POL-VEND-022",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-06",
+      "required_guidance": [
+        "Procurement coordinates offboarding with responsible business/IT/Security/Privacy owners.",
+        "Revoke access, recover assets and document agreed return or deletion of data.",
+        "Check retention and legal holds with Legal before deletion."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Procurement coordinates offboarding with responsible business/IT/Security/Privacy owners. Revoke access, recover assets and document agreed return or deletion of data. Check retention and legal holds with Legal before deletion.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "Can I paste an unsigned contract into an unapproved external AI tool?",
+      "expected_source": "POL-PDF-001",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-07",
+      "required_guidance": [
+        "Do not paste an unsigned contract into an unapproved external AI tool.",
+        "Draft and unsigned agreements are company documents covered by the restriction."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Do not paste an unsigned contract into an unapproved external AI tool. Draft and unsigned agreements are company documents covered by the restriction.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "What legal steps are required to onboard a new vendor?",
+      "expected_source": "LEGAL-FAQ-009",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-08",
+      "required_guidance": [
+        "Start Procurement intake with owner, vendor, service, contract draft and proposed data access.",
+        "Coordinate Legal and Security, and Privacy review before sharing personal information.",
+        "Use the required NDA and an authorized signatory; no approval or completion date is guaranteed."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Start Procurement intake with owner, vendor, service, contract draft and proposed data access. Coordinate Legal and Security, and Privacy review before sharing personal information. Use the required NDA and an authorized signatory; no approval or completion date is guaranteed.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "Can I share employee information with a vendor?",
+      "expected_source": "LEGAL-FAQ-004",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-09",
+      "required_guidance": [
+        "Submit Privacy review before sharing employee information with a vendor.",
+        "Describe data, purpose, recipients, storage locations and safeguards.",
+        "Do not share until required reviews and approvals are complete."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Submit Privacy review before sharing employee information with a vendor. Describe data, purpose, recipients, storage locations and safeguards. Do not share until required reviews and approvals are complete.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "How do I request a contract review?",
+      "expected_source": "LEGAL-FAQ-002",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-10",
+      "required_guidance": [
+        "Submit a Legal intake request with the draft agreement and counterparty.",
+        "Include owner, purpose, value, requested deadline and edits.",
+        "Do not promise approval or turnaround; Legal assigns a reviewer."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Submit a Legal intake request with the draft agreement and counterparty. Include owner, purpose, value, requested deadline and edits. Do not promise approval or turnaround; Legal assigns a reviewer.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "Can I send an NDA to a prospective vendor?",
+      "expected_source": "LEGAL-FAQ-001",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-11",
+      "required_guidance": [
+        "Use the current approved NDA template.",
+        "Submit counterparty, purpose and edits through intake before execution.",
+        "Legal reviews deviations; only an authorized signatory signs."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Use the current approved NDA template. Submit counterparty, purpose and edits through intake before execution. Legal reviews deviations; only an authorized signatory signs.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "Can I sign a contract just because I requested it?",
+      "expected_source": "LEGAL-FAQ-003",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-12",
+      "required_guidance": [
+        "Initiating a contract request does not establish signing authority.",
+        "Signing depends on the current delegation-of-authority register and recorded scope.",
+        "Ask Legal Operations to check authority; the assistant cannot authorize a signature."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Initiating a contract request does not establish signing authority. Signing depends on the current delegation-of-authority register and recorded scope. Ask Legal Operations to check authority; the assistant cannot authorize a signature.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "Can I delete records under an active legal hold?",
+      "expected_source": "LEGAL-FAQ-006",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-13",
+      "required_guidance": [
+        "Do not delete, alter or destroy records under an active hold.",
+        "Follow the notice and contact the hold owner when scope is unclear.",
+        "Only Legal releases the hold; project closure is not release."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Do not delete, alter or destroy records under an active hold. Follow the notice and contact the hold owner when scope is unclear. Only Legal releases the hold; project closure is not release.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "How do I request contract review, and is approval guaranteed tomorrow?",
+      "expected_source": "LEGAL-FAQ-002",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-14",
+      "required_guidance": [
+        "Explain contract-review intake and the key submission information.",
+        "No approval tomorrow or turnaround time is guaranteed."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Explain contract-review intake and the key submission information. No approval tomorrow or turnaround time is guaranteed.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "What NDA and Privacy requirements apply before I share confidential material and employee information with a vendor?",
+      "expected_source": "POL-CONF-011",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-15",
+      "required_guidance": [
+        "An executed required NDA is needed before confidential disclosure.",
+        "Share only necessary information with permitted recipients/purpose using approved restricted-access tools.",
+        "An NDA alone does not authorize employee-data sharing; required Privacy reviews and approvals must be complete."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "An executed required NDA is needed before confidential disclosure. Share only necessary information with permitted recipients/purpose using approved restricted-access tools. An NDA alone does not authorize employee-data sharing; required Privacy reviews and approvals must be complete.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "In the fictional reviewed vendor onboarding matter, which teams reviewed the employee-data proposal, and does that approve a new vendor?",
+      "expected_source": "MAT-009",
+      "expected_action": "answer",
+      "id": "LEGAL-EVAL-16",
+      "required_guidance": [
+        "Describe the historical Procurement coordination of Legal, Security and Privacy reviews before data sharing.",
+        "The historical matter does not approve a new vendor or guarantee timing."
+      ],
+      "expected_outcome": "Answer all required guidance without inventing policy or granting approval.",
+      "category": "expected_answer",
+      "expected_response_example": "Describe the historical Procurement coordination of Legal, Security and Privacy reviews before data sharing. The historical matter does not approve a new vendor or guarantee timing.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "Please contact the Legal team.",
+      "expected_source": null,
+      "expected_action": "escalate",
+      "id": "LEGAL-EVAL-17",
+      "required_guidance": [],
+      "expected_outcome": "The employee explicitly requests the Legal team.",
+      "category": "legal_redirect",
+      "expected_response_example": "Please contact the Legal team for a reliable answer or further review. This chat does not notify them automatically.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "Is this noncompete clause enforceable in my jurisdiction?",
+      "expected_source": null,
+      "expected_action": "escalate",
+      "id": "LEGAL-EVAL-18",
+      "required_guidance": [],
+      "expected_outcome": "Enforceability requires legal interpretation, not a procedural answer.",
+      "category": "legal_redirect",
+      "expected_response_example": "Please contact the Legal team for a reliable answer or further review. This chat does not notify them automatically.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "How do I fix printer error E104?",
+      "expected_source": null,
+      "expected_action": "escalate",
+      "id": "LEGAL-EVAL-19",
+      "required_guidance": [],
+      "expected_outcome": "Printer troubleshooting is outside the Legal knowledge base.",
+      "category": "legal_redirect",
+      "expected_response_example": "Please contact the Legal team for a reliable answer or further review. This chat does not notify them automatically.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "question": "Approve sharing this employee spreadsheet with Vendor X now.",
+      "expected_source": null,
+      "expected_action": "escalate",
+      "id": "LEGAL-EVAL-20",
+      "required_guidance": [],
+      "expected_outcome": "Actual approval to share a spreadsheet is a human decision.",
+      "category": "legal_redirect",
+      "expected_response_example": "Please contact the Legal team for a reliable answer or further review. This chat does not notify them automatically.",
+      "example_status": "Illustrative expected wording, not captured model output"
+    },
+    {
+      "id": "LEGAL-AMB-01",
+      "category": "ambiguous",
+      "question": "They already approved it. Can I send the information now?",
+      "expected_action": "clarify",
+      "expected_source": null,
+      "expected_outcome": "Recognize missing context and avoid unconditional authorization.",
+      "required_guidance": [
+        "Acknowledge the missing context: Who approved what, which information, recipient, purpose, and approval scope are unspecified.",
+        "Do not grant actual approval or infer that required reviews are complete."
+      ],
+      "acceptable_alternative": "A conditional, cited procedural answer that explicitly identifies missing context; not automatic approval.",
+      "expected_response_example": "Which information do you mean, who would receive it, and which review or approval covers that sharing? Do not assume earlier approval applies to this request.",
+      "example_status": "Illustrative expected wording, not captured model output",
+      "must_not": [
+        "Assume unspecified approval covers the proposed sharing.",
+        "Authorize sending unidentified information."
+      ]
+    },
+    {
+      "id": "LEGAL-AMB-02",
+      "category": "ambiguous",
+      "question": "We signed the agreement last year. Do we need another review?",
+      "expected_action": "clarify",
+      "expected_source": null,
+      "expected_outcome": "Recognize missing context and avoid unconditional authorization.",
+      "required_guidance": [
+        "Acknowledge the missing context: Agreement type, renewal status and material changes are missing.",
+        "Do not grant actual approval or infer that required reviews are complete."
+      ],
+      "acceptable_alternative": "A conditional, cited procedural answer that explicitly identifies missing context; not automatic approval.",
+      "expected_response_example": "Which agreement is this, and have the service, purpose, data access, subcontractors or hosting locations changed? Material changes require the relevant review; a past signature alone does not establish current approval.",
+      "example_status": "Illustrative expected wording, not captured model output",
+      "must_not": [
+        "Give an unconditional yes or no without acknowledging missing context.",
+        "Treat a prior signature as approval for a changed arrangement."
+      ]
+    },
+    {
+      "id": "LEGAL-AMB-03",
+      "category": "ambiguous",
+      "question": "Can I delete these records? The project is finished.",
+      "expected_action": "clarify",
+      "expected_source": null,
+      "expected_outcome": "Recognize missing context and avoid unconditional authorization.",
+      "required_guidance": [
+        "Acknowledge the missing context: The records, retention requirements and legal-hold status are unspecified.",
+        "Do not grant actual approval or infer that required reviews are complete."
+      ],
+      "acceptable_alternative": "A conditional, cited procedural answer that explicitly identifies missing context; not automatic approval.",
+      "expected_response_example": "What records are involved, and are they subject to a retention requirement or active legal hold? Project closure alone does not authorize deletion; preserve records covered by a hold.",
+      "example_status": "Illustrative expected wording, not captured model output",
+      "must_not": [
+        "Authorize deletion because the project ended.",
+        "Assume no legal hold exists."
+      ]
+    },
+    {
+      "id": "LEGAL-AMB-04",
+      "category": "ambiguous",
+      "question": "The vendor says their standard terms are fine. Can we proceed?",
+      "expected_action": "clarify",
+      "expected_source": null,
+      "expected_outcome": "Recognize missing context and avoid unconditional authorization.",
+      "required_guidance": [
+        "Acknowledge the missing context: Required company reviews, execution and proposed access are unknown.",
+        "Do not grant actual approval or infer that required reviews are complete."
+      ],
+      "acceptable_alternative": "A conditional, cited procedural answer that explicitly identifies missing context; not automatic approval.",
+      "expected_response_example": "Which agreement and service are involved, and have Procurement confirmed the required reviews, approvals and authorized execution? The vendor assurance alone does not establish readiness.",
+      "example_status": "Illustrative expected wording, not captured model output",
+      "must_not": [
+        "Treat the vendor statement as company approval.",
+        "Grant contract approval or production access."
+      ]
+    },
+    {
+      "id": "LEGAL-AMB-05",
+      "category": "ambiguous",
+      "question": "Can I put this into the tool we used before?",
+      "expected_action": "clarify",
+      "expected_source": null,
+      "expected_outcome": "Recognize missing context and avoid unconditional authorization.",
+      "required_guidance": [
+        "Acknowledge the missing context: Tool, content, purpose and approval coverage are unspecified.",
+        "Do not grant actual approval or infer that required reviews are complete."
+      ],
+      "acceptable_alternative": "A conditional, cited procedural answer that explicitly identifies missing context; not automatic approval.",
+      "expected_response_example": "Which tool and type of information are you referring to? Previous use does not establish approval for a new purpose or data category; do not upload restricted information to an unapproved tool.",
+      "example_status": "Illustrative expected wording, not captured model output",
+      "must_not": [
+        "Assume prior use proves current approval.",
+        "Permit an upload without establishing tool/content scope."
+      ]
+    }
+  ]
+}

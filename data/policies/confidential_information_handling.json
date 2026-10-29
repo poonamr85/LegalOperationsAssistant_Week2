@@ -1,0 +1,61 @@
+{
+  "dataset": "Fictional ExampleCo policy for demonstration only. Not actual company policy or legal advice.",
+  "synthetic": true,
+  "schema_version": "1.0",
+  "records": [
+    {
+      "id": "POL-CONF-010",
+      "source_id": "POL-CONF-010",
+      "source_type": "policy",
+      "title": "Fictional Need-to-know confidentiality handling",
+      "text": "Treat nonpublic pricing, business plans, product designs, draft contracts, and nonpublic customer information as confidential under this fictional procedure. Share only with recipients who need the information for the documented business purpose. Use approved company storage and sharing tools with restricted access. Verify recipients and permissions before sending; do not use public links or personal email.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-CONF-010",
+      "topic_group": "contracts_and_ndas"
+    },
+    {
+      "id": "POL-CONF-011",
+      "source_id": "POL-CONF-011",
+      "source_type": "policy",
+      "title": "Fictional External confidential disclosure checklist",
+      "text": "Before external disclosure of confidential material, confirm that the required NDA is executed, the recipient and purpose are permitted, and the business owner has confirmed the disclosure scope. Share only the necessary material using approved restricted-access tools. An NDA alone does not authorize employee-data sharing; complete the required Privacy review and approvals as well. Ask Legal about unclear contractual restrictions.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-CONF-011",
+      "topic_group": "contracts_and_ndas"
+    },
+    {
+      "id": "POL-CONF-012",
+      "source_id": "POL-CONF-012",
+      "source_type": "policy",
+      "title": "Fictional Accidental confidential disclosure",
+      "text": "If confidential information goes to the wrong recipient, immediately notify Security and Legal through the approved incident process. Record the time, recipient, sharing method, and affected material without copying confidential contents into this demo. Preserve relevant records. Follow Security instructions on restricting access; do not conceal the disclosure, delete evidence, or promise that the incident has been resolved.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-CONF-012",
+      "topic_group": "contracts_and_ndas"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "dataset": "Fictional ExampleCo policy for demonstration only. Not actual company policy or legal advice.",
+  "synthetic": true,
+  "schema_version": "1.0",
+  "records": [
+    {
+      "id": "POL-VEND-010",
+      "source_id": "POL-VEND-010",
+      "source_type": "policy",
+      "title": "Fictional Vendor onboarding intake requirements",
+      "text": "Start a Procurement intake before onboarding a vendor. Include the vendor legal name, business owner, service description, draft contract, requested start date, proposed data access, and known subcontractors. Procurement coordinates Legal and Security reviews, and Privacy review when personal information is involved. Use an approved NDA before confidential disclosure. Intake submission does not constitute approval or guarantee a completion date.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-VEND-010",
+      "topic_group": "privacy_and_vendor_onboarding"
+    },
+    {
+      "id": "POL-VEND-011",
+      "source_id": "POL-VEND-011",
+      "source_type": "policy",
+      "title": "Fictional Vendor security review package",
+      "text": "For a vendor requiring Security review, provide the service description, proposed system access, data categories, hosting locations, and available security questionnaire or assurance reports. Procurement coordinates the review with Security; Security decides whether the evidence is sufficient. A certification or report alone does not replace the required review or approve production access. Do not invent missing reports or mark a vendor as cleared.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-VEND-011",
+      "topic_group": "privacy_and_vendor_onboarding"
+    },
+    {
+      "id": "POL-VEND-012",
+      "source_id": "POL-VEND-012",
+      "source_type": "policy",
+      "title": "Fictional Vendor contract review and data terms",
+      "text": "Send the vendor draft agreement, statement of work, pricing terms, and proposed data processing details to Legal through Procurement intake. Identify counterparty edits and any planned handling of personal information. Legal reviews contractual terms and coordinates with Privacy when needed. Do not accept liability, data-use, or confidentiality changes on Legal\u2019s behalf. Only an authorized signatory may execute the agreement.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-VEND-012",
+      "topic_group": "privacy_and_vendor_onboarding"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+/Title (Fictional ExampleCo External AI Tools Policy)
+/Author (Fictional demonstration dataset)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 1
+/Kids [ 4 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+/MediaBox [ 0.0 0.0 612 792 ]
+/Parent 2 0 R
+/Contents 6 0 R
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+6 0 obj
+<<
+/Length 1671
+>>
+stream
+BT
+/F1 11 Tf
+48 748 Td
+15 TL
+(ExampleCo: External AI Tools Policy) Tj
+T*
+(FICTIONAL DEMONSTRATION ONLY - NOT ACTUAL COMPANY POLICY) Tj
+T*
+(Policy ID: POL-PDF-001 | Edition: 2026.1 | Effective: 2026-10-01) Tj
+T*
+() Tj
+T*
+(1. Approved tools and confidential information) Tj
+T*
+(Use only company-approved AI tools for company work. Do not paste contracts, employee) Tj
+T*
+(information, customer information, or confidential business material into an unapproved) Tj
+T*
+(external AI tool. Draft and unsigned agreements are still company documents and are) Tj
+T*
+(covered by this restriction.) Tj
+T*
+() Tj
+T*
+(2. Requesting a review) Tj
+T*
+(To request review of an AI tool, submit a legal intake request with the tool/provider) Tj
+T*
+(name, business purpose, categories of data, intended users, and available provider) Tj
+T*
+(terms, retention settings, and training-use settings. Legal coordinates Privacy and) Tj
+T*
+(Security review. Do not upload restricted information while review is pending.) Tj
+T*
+() Tj
+T*
+(3. Historical approval and unanswered details) Tj
+T*
+(Approval for a different tool, purpose, or data category does not approve your proposed) Tj
+T*
+(use. The assistant cannot verify whether a particular tool is currently approved or) Tj
+T*
+(grant an exception. Ask Legal Operations to check the approved-tool register. No) Tj
+T*
+(approval date or turnaround is guaranteed.) Tj
+T*
+() Tj
+T*
+(4. Demonstration scope) Tj
+T*
+(This PDF is a fabricated sample for testing extraction and retrieval. The demonstration) Tj
+T*
+(assistant accepts fictional data only. These instructions do not represent any real) Tj
+T*
+(organization's policies or legal requirements.) Tj
+ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000150 00000 n 
+0000000209 00000 n 
+0000000258 00000 n 
+0000000390 00000 n 
+0000000460 00000 n 
+trailer
+<<
+/Size 7
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+2183
+%%EOF

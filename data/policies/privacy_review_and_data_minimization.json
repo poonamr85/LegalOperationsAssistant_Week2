@@ -1,0 +1,61 @@
+{
+  "dataset": "Fictional ExampleCo policy for demonstration only. Not actual company policy or legal advice.",
+  "synthetic": true,
+  "schema_version": "1.0",
+  "records": [
+    {
+      "id": "POL-PRIV-010",
+      "source_id": "POL-PRIV-010",
+      "source_type": "policy",
+      "title": "Fictional Employee data privacy review checklist",
+      "text": "Before sharing employee information with a vendor, submit a Privacy review request listing the data fields, business purpose, recipients, storage and access locations, retention period, proposed safeguards, and business owner. Include whether sensitive information is involved. Do not share any employee information until the required reviews and approvals are complete. The assistant explains this process but cannot approve the sharing.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-PRIV-010",
+      "topic_group": "privacy_and_vendor_onboarding"
+    },
+    {
+      "id": "POL-PRIV-011",
+      "source_id": "POL-PRIV-011",
+      "source_type": "policy",
+      "title": "Fictional Minimum necessary vendor data",
+      "text": "When preparing a vendor data request, list each requested field and explain why it is necessary for the business purpose. Remove unnecessary fields. Prefer fictional test data for demonstrations and testing; never assume that removing names makes a dataset anonymous. Privacy must review the proposed dataset and safeguards before real employee data is shared. Do not paste real personal information into this demonstration assistant.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-PRIV-011",
+      "topic_group": "privacy_and_vendor_onboarding"
+    },
+    {
+      "id": "POL-PRIV-012",
+      "source_id": "POL-PRIV-012",
+      "source_type": "policy",
+      "title": "Fictional New purpose and storage location changes",
+      "text": "If a vendor changes its proposed purpose, storage location, access location, or data recipients, notify the business owner and submit the changes for Privacy review before implementing them. Include the current arrangement and proposed changes. Do not assume earlier approval covers a new purpose or location. Legal and Privacy determine the required contractual and review steps; the assistant cannot determine cross-border legal compliance.",
+      "organization": "ExampleCo (fictional)",
+      "policy_version": "2026.1",
+      "jurisdiction": "Illustrative company procedure; not a statement of law",
+      "updated_at": "2026-10-21",
+      "effective_from": "2026-10-01",
+      "document_status": "current",
+      "approval_status": "approved",
+      "access_scope": "demo",
+      "synthetic": true,
+      "source_url": "https://legal.example.com/demo/POL-PRIV-012",
+      "topic_group": "privacy_and_vendor_onboarding"
+    }
+  ]
+}
