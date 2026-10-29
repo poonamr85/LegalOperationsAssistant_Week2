@@ -1,7 +1,6 @@
 # Replit: Pinecone fictional-data demo
 
-This migration is on `feature/pinecone`; `main` still contains Chroma until a later
-review/merge. Import the migrated branch after it has been pushed, or extract the
+Use the `feature/pinecone` branch for this application, or extract the
 latest `dist/legal_operations_replit.zip` and upload its contents. Include hidden
 `.replit` and `.streamlit/config.toml`. Never upload `.env` or `.venv`.
 
@@ -45,15 +44,16 @@ latest `dist/legal_operations_replit.zip` and upload its contents. Include hidde
    Run: `.venv/bin/python -m scripts.start_app`. Expose internal port 8501.
 7. Confirm restart behavior and restrict demo access. Normal chat and live
    evaluation use paid Nebius calls; Pinecone queries also consume service usage.
-   Neither live answers nor Replit hosting were verified during offline tests.
+   Offline tests do not verify hosted behavior. The owner reports Replit hosting;
+   independent published-deployment verification has not been recorded.
 
 Generate the updated upload ZIP with `python -m scripts.package_replit`. The ZIP
 includes fictional samples and one historical evaluation JSON needed by regression
-tests, but excludes credentials, indexes and model caches. Saved Word guides and
-architecture images still describe the former Chroma version; use README.md for
-current implementation details. Keep real employee data out of this prototype.
+tests, but excludes credentials, indexes and model caches. The Word guide and architecture images now describe Pinecone. See
+`docs/reports/Pinecone_Framework_Checks.html` for recorded checks; earlier
+answer/latency reports remain historical. Keep real employee data out of this prototype.
 
-## Final publishing checklist
+## Hosted application and deployment checklist
 
 The pinned UI pair is Streamlit 1.66.1 and Pillow 13.0.0. Keep the Python-specific
 NumPy pins. The build script creates `.venv` if needed, bootstraps pip with
@@ -81,3 +81,7 @@ fresh restart. Live answer tests incur Nebius usage and are not automated here.
 When pulling changes into a Replit branch with local edits, preserve the edits
 first and merge explicitly; do not use a destructive reset. Confirm the pinned
 versions and the build/run commands after any merge.
+
+Hosting is reported by the project owner. Published URL: to be added. Actual
+deployment type: to be confirmed. The Reserved VM instructions above are an
+option, not a statement of which deployment type is currently in use.

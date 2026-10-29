@@ -47,3 +47,10 @@ storage/evaluations/*
 !storage/evaluations/resolution_20_queries/
 storage/evaluations/resolution_20_queries/*
 !storage/evaluations/resolution_20_queries/resolution_report.json
+
+# Selected reviewed full-workflow report
+!storage/evaluations/pinecone_full_workflow_20261029_232340/
+storage/evaluations/pinecone_full_workflow_20261029_232340/*
+!storage/evaluations/pinecone_full_workflow_20261029_232340/resolution_report.html
+!storage/evaluations/pinecone_full_workflow_20261029_232340/resolution_report.csv
+!storage/evaluations/pinecone_full_workflow_20261029_232340/resolution_report.json

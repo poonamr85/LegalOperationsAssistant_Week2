@@ -1,48 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="2040" viewBox="0 0 2800 2040"><title>Legal Operations Assistant — current RAG architecture</title><desc>Manual indexing, hybrid BM25 and Chroma retrieval, evidence grading, cited draft generation, citation and claim validation, Legal fallback and request state.</desc><rect width="100%" height="100%" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="2040" viewBox="0 0 2800 2040"><title>Legal Operations Assistant — current RAG architecture</title><desc>Manual indexing, hybrid BM25 and Pinecone retrieval, evidence grading, cited draft generation, citation and claim validation, Legal fallback and request state.</desc><rect width="100%" height="100%" fill="white" />
 <text x="90" y="97.2" font-family="Arial, sans-serif" font-size="60" font-weight="700" fill="#132B45" text-anchor="start">Architecture | Internal Legal Operations Assistant</text>
 <text x="90" y="157.19" font-family="Arial, sans-serif" font-size="37" font-weight="400" fill="#132B45" text-anchor="start">LangGraph: retrieve → grade → generate draft → validate → answer or escalate</text>
-<rect x="90" y="200" width="2570" height="82" rx="18" fill="#F0EDF8" stroke="#F0EDF8" stroke-width="3"/>
+<rect x="90" y="200" width="2570" height="82" rx="18" fill="#F0EDF8" stroke="#F0EDF8" stroke-width="3" />
 <text x="1375" y="251.97" font-family="Arial, sans-serif" font-size="31" font-weight="400" fill="#132B45" text-anchor="middle">Normal generated-response path: 3 LLM calls on Nebius · Qwen3-30B-A3B-Instruct-2507 · temperature 0</text>
 <text x="90" y="356.49" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#526477" text-anchor="start">PREPARE</text>
-<rect x="330" y="315" width="2330" height="105" rx="18" fill="#F5F7FB" stroke="#D6DFEA" stroke-width="3"/>
-<text x="1495" y="360.23" font-family="Arial, sans-serif" font-size="29" font-weight="400" fill="#132B45" text-anchor="middle">Fictional JSON / PDF → validate → section/sentence chunks (220 tokens; overlap ≤40) → MiniLM → Chroma</text>
-<text x="1495" y="397.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#526477" text-anchor="middle">Manual index refresh · source/page metadata retained · BM25 built from active passages and reused in memory</text>
-<rect x="330" y="480" width="500" height="620" rx="22" fill="#EDF6FC" stroke="#2273A0" stroke-width="3"/>
-<circle cx="370" cy="520" r="25" fill="#2273A0"/>
+<rect x="330" y="315" width="2330" height="105" rx="18" fill="#F5F7FB" stroke="#D6DFEA" stroke-width="3" />
+<text x="1495" y="360.23" font-family="Arial, sans-serif" font-size="29" font-weight="400" fill="#132B45" text-anchor="middle">Fictional JSON / PDF → validate → section/sentence chunks (220 tokens; overlap ≤40) → MiniLM → Pinecone</text>
+<text x="1495" y="397.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#526477" text-anchor="middle">Admin uploads versioned snapshots · startup verifies only · BM25 reused in memory</text>
+<rect x="330" y="480" width="500" height="620" rx="22" fill="#EDF6FC" stroke="#2273A0" stroke-width="3" />
+<circle cx="370" cy="520" r="25" fill="#2273A0" />
 <text x="370" y="526.1" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="white" text-anchor="middle">1</text>
 <text x="615" y="530.1" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#132B45" text-anchor="middle">RETRIEVE</text>
-<rect x="940" y="480" width="500" height="620" rx="22" fill="#F0F6E9" stroke="#497C39" stroke-width="3"/>
-<circle cx="980" cy="520" r="25" fill="#497C39"/>
+<rect x="940" y="480" width="500" height="620" rx="22" fill="#F0F6E9" stroke="#497C39" stroke-width="3" />
+<circle cx="980" cy="520" r="25" fill="#497C39" />
 <text x="980" y="526.1" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="white" text-anchor="middle">2</text>
 <text x="1225" y="530.1" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#132B45" text-anchor="middle">GRADE EVIDENCE</text>
-<rect x="1550" y="480" width="500" height="620" rx="22" fill="#F3EFF9" stroke="#7050A0" stroke-width="3"/>
-<circle cx="1590" cy="520" r="25" fill="#7050A0"/>
+<rect x="1550" y="480" width="500" height="620" rx="22" fill="#F3EFF9" stroke="#7050A0" stroke-width="3" />
+<circle cx="1590" cy="520" r="25" fill="#7050A0" />
 <text x="1590" y="526.1" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="white" text-anchor="middle">3</text>
 <text x="1835" y="530.1" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#132B45" text-anchor="middle">GENERATE DRAFT</text>
-<rect x="2160" y="480" width="500" height="620" rx="22" fill="#ECF7F6" stroke="#127C80" stroke-width="3"/>
-<circle cx="2200" cy="520" r="25" fill="#127C80"/>
+<rect x="2160" y="480" width="500" height="620" rx="22" fill="#ECF7F6" stroke="#127C80" stroke-width="3" />
+<circle cx="2200" cy="520" r="25" fill="#127C80" />
 <text x="2200" y="526.1" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="white" text-anchor="middle">4</text>
 <text x="2445" y="530.1" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#132B45" text-anchor="middle">VALIDATE</text>
-<circle cx="140" cy="700" r="34" fill="#132B45"/>
-<rect x="95" y="745" width="90" height="85" rx="30" fill="#132B45" stroke="#132B45" stroke-width="3"/>
+<circle cx="140" cy="700" r="34" fill="#132B45" />
+<rect x="95" y="745" width="90" height="85" rx="30" fill="#132B45" stroke="#132B45" stroke-width="3" />
 <text x="140" y="877.23" font-family="Arial, sans-serif" font-size="29" font-weight="400" fill="#132B45" text-anchor="middle">Employee</text>
-<text x="140" y="912.75" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#526477" text-anchor="middle">Streamlit UI</text>
-<polyline points="205,780 330,780" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="330,780 314.54758225552695,787.0868036412966 314.54758225552695,772.9131963587034" fill="#526477"/>
-<rect x="207.0" y="732" width="118" height="37" fill="white"/>
+<text x="140" y="912.75" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#526477" text-anchor="middle">Replit portal</text>
+<polyline points="205,780 330,780" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round" />
+<polygon points="330,780 314.54758225552695,787.0868036412966 314.54758225552695,772.9131963587034" fill="#526477" />
+<rect x="207.0" y="732" width="118" height="37" fill="white" />
 <text x="266" y="757.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#526477" text-anchor="middle">Question</text>
-<rect x="350" y="570" width="205" height="150" rx="12" fill="white" stroke="#2273A0" stroke-width="3"/>
+<rect x="350" y="570" width="205" height="150" rx="12" fill="white" stroke="#2273A0" stroke-width="3" />
 <text x="452" y="614.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">BM25</text>
 <text x="452" y="650.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">Keyword search</text>
 <text x="452" y="686.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">Up to 12</text>
-<rect x="605" y="570" width="205" height="150" rx="12" fill="white" stroke="#2273A0" stroke-width="3"/>
-<text x="708" y="614.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">Chroma</text>
+<rect x="605" y="570" width="205" height="150" rx="12" fill="white" stroke="#2273A0" stroke-width="3" />
+<text x="708" y="614.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">Pinecone</text>
 <text x="708" y="650.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">MiniLM + cosine</text>
 <text x="708" y="686.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">Up to 12</text>
-<polyline points="452,720 452,765 580,765 580,790" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="580,790 572.9131963587034,774.547582255527 587.0868036412966,774.547582255527" fill="#526477"/>
-<polyline points="708,720 708,765 580,765" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round"/>
-<rect x="360" y="790" width="440" height="105" rx="12" fill="white" stroke="#2273A0" stroke-width="3"/>
+<polyline points="452,720 452,765 580,765 580,790" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round" />
+<polygon points="580,790 572.9131963587034,774.547582255527 587.0868036412966,774.547582255527" fill="#526477" />
+<polyline points="708,720 708,765 580,765" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round" />
+<rect x="360" y="790" width="440" height="105" rx="12" fill="white" stroke="#2273A0" stroke-width="3" />
 <text x="580" y="835.23" font-family="Arial, sans-serif" font-size="29" font-weight="400" fill="#132B45" text-anchor="middle">RRF rank fusion</text>
 <text x="580" y="874.23" font-family="Arial, sans-serif" font-size="29" font-weight="400" fill="#132B45" text-anchor="middle">Σ 1 / (60 + rank)</text>
 <text x="580" y="948.49" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#132B45" text-anchor="middle">Deduplicate matching content</text>
@@ -50,36 +50,36 @@
 <text x="580" y="1022.49" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#132B45" text-anchor="middle">Scope: organization / edition</text>
 <text x="580" y="1059.49" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#132B45" text-anchor="middle">Approved fictional-demo filters</text>
 <text x="1190" y="590.62" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#497C39" text-anchor="middle">LLM CALL 1</text>
-<rect x="965" y="620" width="450" height="245" rx="12" fill="white" stroke="#497C39" stroke-width="3"/>
+<rect x="965" y="620" width="450" height="245" rx="12" fill="white" stroke="#497C39" stroke-width="3" />
 <text x="1190" y="667.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Relevance and coverage</text>
 <text x="1190" y="705.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Policy applicability</text>
 <text x="1190" y="743.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Unresolved conflicts</text>
 <text x="1190" y="781.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Human judgment required</text>
 <text x="1190" y="819.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Select supporting passage IDs</text>
-<rect x="965" y="900" width="450" height="130" rx="12" fill="#FCFEF8" stroke="#497C39" stroke-width="3"/>
+<rect x="965" y="900" width="450" height="130" rx="12" fill="#FCFEF8" stroke="#497C39" stroke-width="3" />
 <text x="1190" y="944.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Useful evidence → continue</text>
 <text x="1190" y="982.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Insufficient / human decision</text>
 <text x="1190" y="1020.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">→ Legal fallback</text>
 <text x="1190" y="1081.01" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#497C39" text-anchor="middle">No numeric similarity/confidence gate</text>
 <text x="1800" y="590.62" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#7050A0" text-anchor="middle">LLM CALL 2</text>
-<rect x="1575" y="620" width="450" height="235" rx="12" fill="white" stroke="#7050A0" stroke-width="3"/>
+<rect x="1575" y="620" width="450" height="235" rx="12" fill="white" stroke="#7050A0" stroke-width="3" />
 <text x="1800" y="666.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Use selected evidence only</text>
 <text x="1800" y="704.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Preserve conditions / exceptions</text>
 <text x="1800" y="742.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Cite inline [chunk-id]</text>
 <text x="1800" y="780.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Identify missing information</text>
 <text x="1800" y="818.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Keep the draft concise</text>
-<rect x="1575" y="900" width="450" height="130" rx="12" fill="white" stroke="#7050A0" stroke-width="3"/>
+<rect x="1575" y="900" width="450" height="130" rx="12" fill="white" stroke="#7050A0" stroke-width="3" />
 <text x="1800" y="944.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Draft action:</text>
 <text x="1800" y="982.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">answer / clarify / escalate</text>
 <text x="1800" y="1020.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#132B45" text-anchor="middle">Not displayed yet</text>
 <text x="1800" y="1081.88" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#7050A0" text-anchor="middle">Model escalation skips validation</text>
-<rect x="2185" y="570" width="450" height="150" rx="12" fill="white" stroke="#127C80" stroke-width="3"/>
+<rect x="2185" y="570" width="450" height="150" rx="12" fill="white" stroke="#127C80" stroke-width="3" />
 <text x="2410" y="612.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">LOCAL CITATION CHECK</text>
 <text x="2410" y="648.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">Inline IDs = listed IDs</text>
 <text x="2410" y="684.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">IDs must belong to selected evidence</text>
-<polyline points="2410,720 2410,760" fill="none" stroke="#127C80" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="2410,760 2402.9131963587033,744.547582255527 2417.0868036412967,744.547582255527" fill="#127C80"/>
-<rect x="2185" y="760" width="450" height="260" rx="12" fill="white" stroke="#127C80" stroke-width="3"/>
+<polyline points="2410,720 2410,760" fill="none" stroke="#127C80" stroke-width="4" stroke-linejoin="round" />
+<polygon points="2410,760 2402.9131963587033,744.547582255527 2417.0868036412967,744.547582255527" fill="#127C80" />
+<rect x="2185" y="760" width="450" height="260" rx="12" fill="white" stroke="#127C80" stroke-width="3" />
 <text x="2410" y="805.49" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#132B45" text-anchor="middle">LLM CALL 3: CLAIM SUPPORT</text>
 <text x="2410" y="842.49" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#132B45" text-anchor="middle">Check each factual claim</text>
 <text x="2410" y="879.49" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#132B45" text-anchor="middle">against supplied passages</text>
@@ -87,62 +87,61 @@
 <text x="2410" y="953.49" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#132B45" text-anchor="middle">contradicted</text>
 <text x="2410" y="990.49" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#132B45" text-anchor="middle">Require a complete assessment</text>
 <text x="2410" y="1078.88" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#127C80" text-anchor="middle">One call · no retries or correction loop</text>
-<polyline points="830,780 940,780" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="940,780 924.547582255527,787.0868036412966 924.547582255527,772.9131963587034" fill="#526477"/>
-<polyline points="1440,780 1550,780" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="1550,780 1534.547582255527,787.0868036412966 1534.547582255527,772.9131963587034" fill="#526477"/>
-<polyline points="2050,780 2160,780" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="2160,780 2144.547582255527,787.0868036412966 2144.547582255527,772.9131963587034" fill="#526477"/>
-<rect x="1458.5" y="734" width="73" height="37" fill="white"/>
+<polyline points="830,780 940,780" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round" />
+<polygon points="940,780 924.547582255527,787.0868036412966 924.547582255527,772.9131963587034" fill="#526477" />
+<polyline points="1440,780 1550,780" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round" />
+<polygon points="1550,780 1534.547582255527,787.0868036412966 1534.547582255527,772.9131963587034" fill="#526477" />
+<polyline points="2050,780 2160,780" fill="none" stroke="#526477" stroke-width="4" stroke-linejoin="round" />
+<polygon points="2160,780 2144.547582255527,787.0868036412966 2144.547582255527,772.9131963587034" fill="#526477" />
+<rect x="1458.5" y="734" width="73" height="37" fill="white" />
 <text x="1495" y="759.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#526477" text-anchor="middle">Pass</text>
-<polyline points="2660,950 2730,950 2730,1200 2660,1200" fill="none" stroke="#127C80" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="2660,1200 2675.452417744473,1192.9131963587033 2675.452417744473,1207.0868036412967" fill="#127C80"/>
-<rect x="2693.5" y="1107" width="73" height="37" fill="white"/>
+<polyline points="2660,950 2730,950 2730,1200 2660,1200" fill="none" stroke="#127C80" stroke-width="4" stroke-linejoin="round" />
+<polygon points="2660,1200 2675.452417744473,1192.9131963587033 2675.452417744473,1207.0868036412967" fill="#127C80" />
+<rect x="2693.5" y="1107" width="73" height="37" fill="white" />
 <text x="2730" y="1132.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#127C80" text-anchor="middle">Pass</text>
-<rect x="2160" y="1140" width="500" height="120" rx="18" fill="#EBF7EF" stroke="#4B8758" stroke-width="3"/>
+<rect x="2160" y="1140" width="500" height="120" rx="18" fill="#EBF7EF" stroke="#4B8758" stroke-width="3" />
 <text x="2410" y="1180.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">DISPLAY ANSWER / CLARIFICATION</text>
 <text x="2410" y="1216.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">Only after checks pass</text>
 <text x="2410" y="1252.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#132B45" text-anchor="middle">Citations remain visible</text>
-<polyline points="580,1100 580,1320" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round"/>
-<polyline points="1190,1100 1190,1320" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round"/>
-<polyline points="1800,1100 1800,1320" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round"/>
-<polyline points="2160,1000 2115,1000 2115,1320" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round"/>
-<polyline points="580,1320 2115,1320" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round"/>
-<polyline points="1495,1320 1495,1380" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="1495,1380 1487.9131963587033,1364.547582255527 1502.0868036412967,1364.547582255527" fill="#AF473B"/>
-<rect x="497.0" y="1192" width="166" height="37" fill="white"/>
+<polyline points="580,1100 580,1320" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round" />
+<polyline points="1190,1100 1190,1320" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round" />
+<polyline points="1800,1100 1800,1320" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round" />
+<polyline points="2160,1000 2115,1000 2115,1320" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round" />
+<polyline points="580,1320 2115,1320" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round" />
+<polyline points="1495,1320 1495,1380" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round" />
+<polygon points="1495,1380 1487.9131963587033,1364.547582255527 1502.0868036412967,1364.547582255527" fill="#AF473B" />
+<rect x="497.0" y="1192" width="166" height="37" fill="white" />
 <text x="580" y="1217.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#AF473B" text-anchor="middle">Empty / error</text>
-<rect x="1107.0" y="1192" width="166" height="37" fill="white"/>
+<rect x="1107.0" y="1192" width="166" height="37" fill="white" />
 <text x="1190" y="1217.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#AF473B" text-anchor="middle">Reject / error</text>
-<rect x="1704.5" y="1192" width="191" height="37" fill="white"/>
+<rect x="1704.5" y="1192" width="191" height="37" fill="white" />
 <text x="1800" y="1217.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#AF473B" text-anchor="middle">Escalate / error</text>
-<rect x="1128.0" y="1287" width="734" height="37" fill="white"/>
+<rect x="1128.0" y="1287" width="734" height="37" fill="white" />
 <text x="1495" y="1312.62" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#AF473B" text-anchor="middle">Failed evidence, citations, claims or processing → safe fallback</text>
-<polyline points="140,950 140,1465 330,1465" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round"/>
-<polygon points="330,1465 314.54758225552695,1472.0868036412967 314.54758225552695,1457.9131963587033" fill="#AF473B"/>
+<polyline points="140,950 140,1465 330,1465" fill="none" stroke="#AF473B" stroke-width="4" stroke-linejoin="round" />
+<polygon points="330,1465 314.54758225552695,1472.0868036412967 314.54758225552695,1457.9131963587033" fill="#AF473B" />
 <text x="148" y="1131.75" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#AF473B" text-anchor="start">Direct</text>
 <text x="148" y="1166.75" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#AF473B" text-anchor="start">human</text>
 <text x="148" y="1201.75" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#AF473B" text-anchor="start">request</text>
-<rect x="330" y="1380" width="2330" height="175" rx="22" fill="#FCF0ED" stroke="#AF473B" stroke-width="3"/>
-<circle cx="375" cy="1420" r="25" fill="#AF473B"/>
+<rect x="330" y="1380" width="2330" height="175" rx="22" fill="#FCF0ED" stroke="#AF473B" stroke-width="3" />
+<circle cx="375" cy="1420" r="25" fill="#AF473B" />
 <text x="375" y="1426.1" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="white" text-anchor="middle">5</text>
 <text x="1495" y="1427.84" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#AF473B" text-anchor="middle">CONTACT LEGAL — FIXED MESSAGE, NO EXTRA LLM CALL</text>
 <text x="1495" y="1476.1" font-family="Arial, sans-serif" font-size="30" font-weight="400" fill="#132B45" text-anchor="middle">Withhold rejected draft · record escalation reason · prepare local handoff packet</text>
 <text x="1495" y="1524.36" font-family="Arial, sans-serif" font-size="28" font-weight="400" fill="#526477" text-anchor="middle">The application does not notify Legal or grant approvals automatically.</text>
-<rect x="90" y="1610" width="1740" height="285" rx="22" fill="#FFFCF0" stroke="#CDBA69" stroke-width="3"/>
+<rect x="90" y="1610" width="1740" height="285" rx="22" fill="#FFFCF0" stroke="#CDBA69" stroke-width="3" />
 <text x="125" y="1661.97" font-family="Arial, sans-serif" font-size="31" font-weight="700" fill="#132B45" text-anchor="start">PER-REQUEST STATE · LangGraph TypedDict</text>
 <text x="125" y="1716.1" font-family="Arial, sans-serif" font-size="30" font-weight="400" fill="#132B45" text-anchor="start">Question + organization / policy edition</text>
 <text x="125" y="1759.1" font-family="Arial, sans-serif" font-size="30" font-weight="400" fill="#132B45" text-anchor="start">Retrieved passages + selected evidence + grade</text>
 <text x="125" y="1802.1" font-family="Arial, sans-serif" font-size="30" font-weight="400" fill="#132B45" text-anchor="start">Draft + citation status + claim assessment</text>
 <text x="125" y="1845.1" font-family="Arial, sans-serif" font-size="30" font-weight="400" fill="#132B45" text-anchor="start">Action + decision / escalation reason + failed stage + timings</text>
 <text x="125" y="1880.88" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#526477" text-anchor="start">Fresh state per question; session chat is not a persistent audit log or model memory.</text>
-<rect x="1880" y="1610" width="780" height="285" rx="22" fill="#F5F8FC" stroke="#8AA2BE" stroke-width="3"/>
+<rect x="1880" y="1610" width="780" height="285" rx="22" fill="#F5F8FC" stroke="#8AA2BE" stroke-width="3" />
 <text x="1915" y="1661.97" font-family="Arial, sans-serif" font-size="31" font-weight="700" fill="#132B45" text-anchor="start">KEY POINTS</text>
-<text x="1915" y="1711.75" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#132B45" text-anchor="start">• Local embeddings; hosted language-model calls</text>
+<text x="1915" y="1711.75" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#132B45" text-anchor="start">• Replit runs MiniLM, BM25 and LangGraph</text>
 <text x="1915" y="1748.75" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#132B45" text-anchor="start">• Human decisions stay with Legal</text>
 <text x="1915" y="1785.75" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#132B45" text-anchor="start">• Missing index → setup guidance</text>
-<text x="1915" y="1822.75" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#132B45" text-anchor="start">• 95% faithfulness is an evaluation target</text>
 <text x="1915" y="1859.75" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#132B45" text-anchor="start">• Model checks reduce risk, not guarantee correctness</text>
-<text x="90" y="1973.49" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#526477" text-anchor="start">Code map: knowledge_base.py + chunking.py  |  retriever.py  |  bot.py  |  workflow.py  |  app.py / app_pages</text>
+<text x="90" y="1973.49" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#526477" text-anchor="start">Code: legal_assistant/ (ingestion, embeddings, Pinecone, graph) · scripts/ (setup and startup)</text>
 <text x="90" y="2013.88" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#526477" text-anchor="start">Current implementation · Fictional ExampleCo corpus · Claim timeout defaults to 10 s (SDK network timeout, not a whole-request deadline)</text>
 </svg>

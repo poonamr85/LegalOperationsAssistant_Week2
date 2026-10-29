@@ -1,0 +1,1199 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Legal assistant evaluation</title>
+    <style>body{font:16px system-ui;color:#172b45;max-width:1200px;margin:40px auto;padding:20px}h1{color:#10233f}.cards{display:flex;flex-wrap:wrap;gap:12px}.card{border:1px solid #d8e1ef;padding:16px;min-width:145px}.card strong{display:block;font-size:25px}table{border-collapse:collapse;width:100%;margin-top:25px}td,th{padding:12px;border:1px solid #d8e1ef;text-align:left}th{background:#10233f;color:white}pre{white-space:pre-wrap;font-size:12px}small{color:#526479}</style><h1>Legal Operations Assistant — evaluation report</h1><p><b>Execution:</b> Local development machine, using remote Pinecone and Nebius. These timings are not measurements of the Replit-hosted application.</p><p>complete | 20/20 questions | 2026-10-29T23:23:41.935958+00:00</p>
+    <p><b>Automated development evaluation, not user-confirmed resolution or independent Legal review.</b> Automated development evaluation of fictional examples; not held out, independently reviewed, or user-confirmed resolution. Validator assessments do not independently prove grounding. Response timings were measured locally, not from the published Replit service.</p>
+    <div class="cards"><div class="card"><small>Automated resolution</small><strong>75.0%</strong></div><div class="card"><small>Correct escalation</small><strong>100.0%</strong></div><div class="card"><small>Unnecessary escalation</small><strong>6.25%</strong></div><div class="card"><small>Processing failures</small><strong>0.0%</strong></div><div class="card"><small>Median seconds</small><strong>5.3174</strong></div><div class="card"><small>P95 seconds</small><strong>8.2793</strong></div></div><p>Resolved: 15/20 total; 15/16 expected answerable.
+    Correct escalations: 4/4. Quality-evaluator errors: 0.</p>
+    <p>Resolution requires a released answer, passing live claim validation, and all required guidance met by the offline rubric assessor. Workflow errors do not count as correct escalation.
+    Response latency excludes the separate offline quality-assessment call. P95 uses nearest rank; one small run is not a production guarantee.</p>
+    <table><thead><tr><th>ID</th><th>Question</th><th>Expected</th><th>Actual</th><th>Quality</th><th>Seconds</th></tr></thead><tbody><tr><td>LEGAL-EVAL-01</td><td>What should I do if a counterparty supplies its own NDA or changes the approved template?</td><td>answer</td><td>answer</td><td>complete</td><td>5.71</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> If a counterparty supplies its own NDA or changes the approved template, submit the document and marked changes through the legal intake form. Flag any changes to confidentiality scope, permitted recipients, duration, liability, and governing law for review. Do not accept changes or represent that Legal has approved them. Only an authorized signatory may execute the agreement [POL-NDA-011:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Send a counterparty NDA or changed template and marked edits to Legal through intake. — <b>Met</b>: Submitted via intake with marked changes as required.</li><li>Do not accept changes or represent that Legal approved them. — <b>Met</b>: Explicitly prohibits accepting changes or claiming approval.</li><li>Only an authorized signatory executes the agreement. — <b>Met</b>: Only authorized signatory may execute, per policy.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;POL-NDA-011:0&quot;,
+    &quot;text&quot;: &quot;If a counterparty supplies its own NDA or changes the approved template, send the document and marked changes to Legal through the intake form. Flag changes to confidentiality scope, permitted recipients, duration, liability, and governing law for review. Do not accept changes or represent that Legal approved them. Only an authorized signatory may execute the agreement.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-NDA-011&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Counterparty NDA and changed clauses&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-NDA-011&quot;,
+      &quot;source_file&quot;: &quot;nda_request_and_review.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-NDA-011:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Counterparty NDA and changed clauses&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 71,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.79385078
+  },
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-001:0&quot;,
+    &quot;text&quot;: &quot;Question: Can I send an NDA to a prospective vendor?\nAnswer: Use the current approved NDA template from the legal template library. Submit the counterparty name, purpose, and requested changes through the legal intake form before execution. Employees may not sign merely because they initiated the request. Legal reviews deviations; an authorized signatory executes the NDA.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-001&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;Can I send an NDA to a prospective vendor?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-001&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-001:s0&quot;,
+      &quot;section_title&quot;: &quot;Can I send an NDA to a prospective vendor?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 75,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.031746031746031744,
+    &quot;similarity&quot;: 0.744813859
+  },
+  {
+    &quot;id&quot;: &quot;POL-NDA-010:0&quot;,
+    &quot;text&quot;: &quot;For an NDA request, use the current approved template and submit the counterparty legal name, business owner, discussion purpose, intended recipients, requested deadline, and any counterparty edits through Legal intake. Attach the proposed NDA and describe the information to be disclosed. Do not disclose confidential information before the required NDA is executed. A requested deadline does not guarantee completion.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-NDA-010&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional NDA intake checklist&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-NDA-010&quot;,
+      &quot;source_file&quot;: &quot;nda_request_and_review.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-NDA-010:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional NDA intake checklist&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 77,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.030330882352941176,
+    &quot;similarity&quot;: 0.737694085
+  },
+  {
+    &quot;id&quot;: &quot;POL-CLAR-NDA-001:0&quot;,
+    &quot;text&quot;: &quot;When referring to an earlier NDA approval, identify the agreement, counterparty, approved template or edits, intended purpose, and approval record. Do not assume approval for one agreement covers another or that a business owner can sign. Legal reviews deviations and an authorized signatory executes the NDA. Ask Legal Operations to verify unclear approval scope before execution.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-CLAR-NDA-001&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional NDA approval scope clarification&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-23&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-CLAR-NDA-001&quot;,
+      &quot;source_file&quot;: &quot;nda_approval_scope.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-CLAR-NDA-001:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional NDA approval scope clarification&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 74,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.029877369007803793,
+    &quot;similarity&quot;: 0.666433394
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-02</td><td>Can I use public links or personal email to share confidential pricing?</td><td>answer</td><td>answer</td><td>complete</td><td>4.99</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> No, you cannot use public links or personal email to share confidential pricing. According to the policy, confidential information such as nonpublic pricing must only be shared using approved company storage and sharing tools with restricted access, and recipients must be verified before sharing [POL-CONF-010:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Do not use public links or personal email to share confidential pricing. — <b>Met</b>: Answer explicitly prohibits public links and personal email.</li><li>Use approved company tools with restricted access. — <b>Met</b>: Answer specifies approved tools with restricted access.</li><li>Share only with recipients who need it for the documented business purpose. — <b>Met</b>: Answer requires sharing only with those who need it for business purpose.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;POL-CONF-010:0&quot;,
+    &quot;text&quot;: &quot;Treat nonpublic pricing, business plans, product designs, draft contracts, and nonpublic customer information as confidential under this fictional procedure. Share only with recipients who need the information for the documented business purpose. Use approved company storage and sharing tools with restricted access. Verify recipients and permissions before sending; do not use public links or personal email.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-CONF-010&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Need-to-know confidentiality handling&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-CONF-010&quot;,
+      &quot;source_file&quot;: &quot;confidential_information_handling.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-CONF-010:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Need-to-know confidentiality handling&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 74,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.652223885
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-03</td><td>What should happen before a vendor changes its data storage location?</td><td>answer</td><td>answer</td><td>complete</td><td>5.52</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> Before a vendor changes its data storage location, notify the business owner and submit the change for Privacy review before implementation. Include the current and proposed arrangements. Prior approval does not cover new storage locations, and Legal and Privacy will determine required contractual and review steps [POL-PRIV-012:0][POL-CLAR-VEND-001:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Submit the vendor storage-location change for Privacy review before implementation. — <b>Met</b>: Meets requirement to submit for Privacy review before implementation.</li><li>Include the existing arrangement and proposed change. — <b>Met</b>: Includes both current and proposed arrangements as required.</li><li>Do not assume earlier approval covers the new location. — <b>Met</b>: Explicitly states prior approval does not cover new locations.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;POL-PRIV-012:0&quot;,
+    &quot;text&quot;: &quot;If a vendor changes its proposed purpose, storage location, access location, or data recipients, notify the business owner and submit the changes for Privacy review before implementing them. Include the current arrangement and proposed changes. Do not assume earlier approval covers a new purpose or location. Legal and Privacy determine the required contractual and review steps; the assistant cannot determine cross-border legal compliance.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-PRIV-012&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional New purpose and storage location changes&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-PRIV-012&quot;,
+      &quot;source_file&quot;: &quot;privacy_review_and_data_minimization.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-PRIV-012:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional New purpose and storage location changes&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 77,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.62027818
+  },
+  {
+    &quot;id&quot;: &quot;POL-CLAR-VEND-001:0&quot;,
+    &quot;text&quot;: &quot;For a renewal or prior vendor arrangement, identify the agreement and whether the service, purpose, data access, subcontractors, or hosting locations changed. Submit material changes to Procurement before implementation for the required Legal, Security, and Privacy reviews. A vendor statement that its standard terms are fine does not establish company approval. Prior approval does not automatically cover a changed arrangement.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-CLAR-VEND-001&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional vendor change and prior approval clarification&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-23&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-CLAR-VEND-001&quot;,
+      &quot;source_file&quot;: &quot;vendor_change_context.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-CLAR-VEND-001:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional vendor change and prior approval clarification&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 76,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03149801587301587,
+    &quot;similarity&quot;: 0.459328622
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-04</td><td>Where should I route an employee request to access, correct, or delete personal information?</td><td>answer</td><td>answer</td><td>complete</td><td>5.07</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> Route the employee request to the designated Privacy intake channel [POL-DATA-011:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Route personal-data access, correction or deletion requests to the Privacy intake channel. — <b>Met</b>: Answer directs to Privacy intake channel as required.</li><li>Privacy coordinates identity checks and the response. — <b>Met</b>: Privacy coordinates identity checks and response per evidence.</li><li>Do not promise an outcome or legal response deadline. — <b>Met</b>: No outcome or deadline promised in answer.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;POL-DATA-011:0&quot;,
+    &quot;text&quot;: &quot;Route an employee request to access, correct, or delete their personal information to the designated Privacy intake channel. Record when it was received, the requested action, and the relevant system without collecting unnecessary details. Do not promise an outcome or legal response deadline. Privacy coordinates identity checks, applicable requirements, and the response. This assistant cannot verify identity or fulfill the request.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-DATA-011&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Employee personal data requests&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-DATA-011&quot;,
+      &quot;source_file&quot;: &quot;privacy_retention_and_requests.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-DATA-011:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Employee personal data requests&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 75,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.75676918
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-05</td><td>What information is in the vendor security review package?</td><td>answer</td><td>answer</td><td>complete</td><td>5.98</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> The vendor security review package must include the service description, proposed system access, data categories, hosting locations, and available security questionnaire or assurance reports [POL-VEND-011:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Provide service description, proposed access and data categories. — <b>Met</b>: All required elements are included.</li><li>Provide hosting locations and available security questionnaires or assurance reports. — <b>Met</b>: All required elements are included.</li><li>Security decides sufficiency; a report alone does not approve access. — <b>Met</b>: Security decides sufficiency; report alone does not approve access.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;POL-VEND-011:0&quot;,
+    &quot;text&quot;: &quot;For a vendor requiring Security review, provide the service description, proposed system access, data categories, hosting locations, and available security questionnaire or assurance reports. Procurement coordinates the review with Security; Security decides whether the evidence is sufficient. A certification or report alone does not replace the required review or approve production access. Do not invent missing reports or mark a vendor as cleared.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-VEND-011&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Vendor security review package&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-VEND-011&quot;,
+      &quot;source_file&quot;: &quot;vendor_due_diligence.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-VEND-011:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Vendor security review package&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 77,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.032266458495966696,
+    &quot;similarity&quot;: 0.702246606
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-06</td><td>What is the vendor offboarding checklist when an engagement ends?</td><td>answer</td><td>answer</td><td>complete</td><td>5.73</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> When a vendor engagement ends, follow the vendor offboarding checklist: coordinate offboarding with Procurement, the business owner, IT, Security, and Privacy; revoke access through system owners; recover company assets; document the agreed return or deletion of company data and obtain required confirmation; and check retention obligations and legal holds with Legal before deletion. Do not assume termination permits destroying all records [POL-VEND-022:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Procurement coordinates offboarding with responsible business/IT/Security/Privacy owners. — <b>Met</b>: Matches guidance on coordination with Procurement and relevant owners.</li><li>Revoke access, recover assets and document agreed return or deletion of data. — <b>Met</b>: Covers revoking access, recovering assets, and documenting data return/deletion.</li><li>Check retention and legal holds with Legal before deletion. — <b>Met</b>: Explicitly requires checking retention and legal holds with Legal before deletion.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;POL-VEND-022:0&quot;,
+    &quot;text&quot;: &quot;When a vendor engagement ends, ask Procurement to coordinate offboarding with the business owner, IT, Security, and Privacy. Revoke access through the responsible system owners, recover company assets, and document the agreed return or deletion of company data and any required confirmation. Check applicable retention obligations and legal holds with Legal before deletion. Do not assume termination permits destroying all records.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-VEND-022&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Vendor offboarding checklist&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-VEND-022&quot;,
+      &quot;source_file&quot;: &quot;vendor_changes_and_offboarding.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-VEND-022:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Vendor offboarding checklist&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 79,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.490208268
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-07</td><td>Can I paste an unsigned contract into an unapproved external AI tool?</td><td>answer</td><td>answer</td><td>complete</td><td>5.41</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> No, you cannot paste an unsigned contract into an unapproved external AI tool. Draft and unsigned agreements are considered company documents and are subject to the same restrictions as confidential information [POL-PDF-001:p1:2].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Do not paste an unsigned contract into an unapproved external AI tool. — <b>Met</b>: Directly prohibits pasting unsigned contracts into unapproved tools.</li><li>Draft and unsigned agreements are company documents covered by the restriction. — <b>Met</b>: Explicitly states draft agreements are company documents under restriction.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;POL-PDF-001:p1:2&quot;,
+    &quot;text&quot;: &quot;1. Approved tools and confidential information\nUse only company-approved AI tools for company work. Do not paste contracts, employee\ninformation, customer information, or confidential business material into an unapproved\nexternal AI tool. Draft and unsigned agreements are still company documents and are\ncovered by this restriction.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-PDF-001&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional External AI Tools Policy&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_format&quot;: &quot;pdf&quot;,
+      &quot;source_file&quot;: &quot;fictional_ai_tools_policy.pdf&quot;,
+      &quot;page&quot;: 1,
+      &quot;section_id&quot;: &quot;POL-PDF-001:p1:s2&quot;,
+      &quot;section_title&quot;: &quot;1. Approved tools and confidential information&quot;,
+      &quot;chunk_index&quot;: 2,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 59,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.70869267
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-08</td><td>What legal steps are required to onboard a new vendor?</td><td>answer</td><td>answer</td><td>complete</td><td>5.24</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> To onboard a new vendor, start a Procurement intake with the business owner, vendor name, service description, contract draft, and proposed data access. Procurement will coordinate Legal contract review and Security review. If personal information is involved, request a Privacy review before sharing it. Use an approved NDA before disclosing confidential information. Only an authorized signatory may execute the agreement. No approval or completion date is guaranteed [LEGAL-FAQ-009:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Start Procurement intake with owner, vendor, service, contract draft and proposed data access. — <b>Met</b>: All required elements are included in the answer.</li><li>Coordinate Legal and Security, and Privacy review before sharing personal information. — <b>Met</b>: Legal, Security, and Privacy reviews are properly addressed.</li><li>Use the required NDA and an authorized signatory; no approval or completion date is guaranteed. — <b>Met</b>: NDA and authorized signatory are correctly stated.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-009:0&quot;,
+    &quot;text&quot;: &quot;Question: What legal steps are required to onboard a new vendor?\nAnswer: Start a Procurement intake with the business owner, vendor name, service description, contract draft, and proposed data access. Procurement coordinates Legal contract review and Security review. If personal information is involved, request a Privacy review before sharing it. Use an approved NDA before disclosing confidential information. Only an authorized signatory may execute the agreement. No approval or completion date is guaranteed.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-009&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;What legal steps are required to onboard a new vendor?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-009&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-009:s0&quot;,
+      &quot;section_title&quot;: &quot;What legal steps are required to onboard a new vendor?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 93,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.857660592
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-09</td><td>Can I share employee information with a vendor?</td><td>answer</td><td>answer</td><td>complete</td><td>8.28</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> Yes, you can share employee information with a vendor, but only after submitting a privacy review request that includes the data, purpose, recipients, storage locations, proposed safeguards, and business owner. Do not share the information until the required reviews and approvals are complete [LEGAL-FAQ-004:0][POL-PRIV-010:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Submit Privacy review before sharing employee information with a vendor. — <b>Met</b>: Required review submitted before sharing</li><li>Describe data, purpose, recipients, storage locations and safeguards. — <b>Met</b>: All required elements described</li><li>Do not share until required reviews and approvals are complete. — <b>Met</b>: No sharing until approvals complete</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-004:0&quot;,
+    &quot;text&quot;: &quot;Question: Can I share employee information with a vendor?\nAnswer: Before sharing employee information with a vendor, submit a privacy review request describing the data, purpose, recipients, storage locations, and proposed safeguards. Do not share the information until the required reviews and approvals are complete. The assistant cannot grant approval or determine legal compliance.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-004&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;Can I share employee information with a vendor?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-004&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-004:s0&quot;,
+      &quot;section_title&quot;: &quot;Can I share employee information with a vendor?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 69,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.87967813
+  },
+  {
+    &quot;id&quot;: &quot;POL-PRIV-010:0&quot;,
+    &quot;text&quot;: &quot;Before sharing employee information with a vendor, submit a Privacy review request listing the data fields, business purpose, recipients, storage and access locations, retention period, proposed safeguards, and business owner. Include whether sensitive information is involved. Do not share any employee information until the required reviews and approvals are complete. The assistant explains this process but cannot approve the sharing.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-PRIV-010&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Employee data privacy review checklist&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-PRIV-010&quot;,
+      &quot;source_file&quot;: &quot;privacy_review_and_data_minimization.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-PRIV-010:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Employee data privacy review checklist&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 75,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.031754032258064516,
+    &quot;similarity&quot;: 0.758777142
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-10</td><td>How do I request a contract review?</td><td>answer</td><td>answer</td><td>complete</td><td>4.20</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> Submit a legal intake request with the draft agreement, counterparty name, business owner, purpose, value, requested deadline, and any counterparty edits. Do not promise approval or a turnaround time. Legal assigns the request to the appropriate reviewer [LEGAL-FAQ-002:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Submit a Legal intake request with the draft agreement and counterparty. — <b>Met</b>: Draft and counterparty included in request</li><li>Include owner, purpose, value, requested deadline and edits. — <b>Met</b>: Owner, purpose, value, deadline, edits all included</li><li>Do not promise approval or turnaround; Legal assigns a reviewer. — <b>Met</b>: No approval or turnaround promise made; reviewer assigned</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-002:0&quot;,
+    &quot;text&quot;: &quot;Question: How do I request a contract review?\nAnswer: Submit a legal intake request with the draft agreement, counterparty name, business owner, purpose, value, requested deadline, and any counterparty edits. Do not promise approval or a turnaround time. Legal assigns the request to the appropriate reviewer.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-002&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;How do I request a contract review?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-002&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-002:s0&quot;,
+      &quot;section_title&quot;: &quot;How do I request a contract review?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 64,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.835298061
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-11</td><td>Can I send an NDA to a prospective vendor?</td><td>answer</td><td>answer</td><td>complete</td><td>5.53</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> Yes, you can send an NDA to a prospective vendor, but only using the current approved template from the legal template library. Submit the counterparty name, purpose, and any requested changes through the legal intake form before sending. Do not sign the NDA yourself—only an authorized signatory may execute it after Legal reviews any deviations [LEGAL-FAQ-001:0]. Ensure the NDA is in place before disclosing any confidential information [POL-NDA-010:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Use the current approved NDA template. — <b>Met</b>: Uses current approved template as required.</li><li>Submit counterparty, purpose and edits through intake before execution. — <b>Met</b>: Submits counterparty, purpose, and edits via intake.</li><li>Legal reviews deviations; only an authorized signatory signs. — <b>Met</b>: Legal reviews deviations; authorized signatory executes.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-001:0&quot;,
+    &quot;text&quot;: &quot;Question: Can I send an NDA to a prospective vendor?\nAnswer: Use the current approved NDA template from the legal template library. Submit the counterparty name, purpose, and requested changes through the legal intake form before execution. Employees may not sign merely because they initiated the request. Legal reviews deviations; an authorized signatory executes the NDA.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-001&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;Can I send an NDA to a prospective vendor?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-001&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-001:s0&quot;,
+      &quot;section_title&quot;: &quot;Can I send an NDA to a prospective vendor?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 75,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.793521881
+  },
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-009:0&quot;,
+    &quot;text&quot;: &quot;Question: What legal steps are required to onboard a new vendor?\nAnswer: Start a Procurement intake with the business owner, vendor name, service description, contract draft, and proposed data access. Procurement coordinates Legal contract review and Security review. If personal information is involved, request a Privacy review before sharing it. Use an approved NDA before disclosing confidential information. Only an authorized signatory may execute the agreement. No approval or completion date is guaranteed.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-009&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;What legal steps are required to onboard a new vendor?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-009&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-009:s0&quot;,
+      &quot;section_title&quot;: &quot;What legal steps are required to onboard a new vendor?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 93,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.030090497737556562,
+    &quot;similarity&quot;: 0.627774477
+  },
+  {
+    &quot;id&quot;: &quot;POL-CLAR-NDA-001:0&quot;,
+    &quot;text&quot;: &quot;When referring to an earlier NDA approval, identify the agreement, counterparty, approved template or edits, intended purpose, and approval record. Do not assume approval for one agreement covers another or that a business owner can sign. Legal reviews deviations and an authorized signatory executes the NDA. Ask Legal Operations to verify unclear approval scope before execution.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-CLAR-NDA-001&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional NDA approval scope clarification&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-23&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-CLAR-NDA-001&quot;,
+      &quot;source_file&quot;: &quot;nda_approval_scope.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-CLAR-NDA-001:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional NDA approval scope clarification&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 74,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.029957522915269395,
+    &quot;similarity&quot;: 0.499225169
+  },
+  {
+    &quot;id&quot;: &quot;POL-NDA-010:0&quot;,
+    &quot;text&quot;: &quot;For an NDA request, use the current approved template and submit the counterparty legal name, business owner, discussion purpose, intended recipients, requested deadline, and any counterparty edits through Legal intake. Attach the proposed NDA and describe the information to be disclosed. Do not disclose confidential information before the required NDA is executed. A requested deadline does not guarantee completion.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-NDA-010&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional NDA intake checklist&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-NDA-010&quot;,
+      &quot;source_file&quot;: &quot;nda_request_and_review.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-NDA-010:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional NDA intake checklist&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 77,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.029957522915269395,
+    &quot;similarity&quot;: 0.635133922
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-12</td><td>Can I sign a contract just because I requested it?</td><td>answer</td><td>answer</td><td>complete</td><td>5.39</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> No, you cannot sign a contract just because you requested it. Only individuals listed in the current delegation-of-authority register may sign on behalf of the company [LEGAL-FAQ-003:0]. Requesting a contract does not grant signing authority. You must verify your authority with Legal Operations before signing [LEGAL-FAQ-001:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Initiating a contract request does not establish signing authority. — <b>Met</b>: Explicitly states signing not allowed just for requesting.</li><li>Signing depends on the current delegation-of-authority register and recorded scope. — <b>Met</b>: Directly references delegation-of-authority register and scope.</li><li>Ask Legal Operations to check authority; the assistant cannot authorize a signature. — <b>Met</b>: Directs to Legal Operations for authority check.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-003:0&quot;,
+    &quot;text&quot;: &quot;Question: Can I sign an agreement on behalf of the company?\nAnswer: Only individuals listed in the current delegation-of-authority register may sign within their recorded scope. The assistant cannot verify an employee&#x27;s signing authority or authorize a signature. Ask Legal Operations to check the register before signing.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-003&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;Can I sign an agreement on behalf of the company?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-003&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-003:s0&quot;,
+      &quot;section_title&quot;: &quot;Can I sign an agreement on behalf of the company?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 62,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03252247488101534,
+    &quot;similarity&quot;: 0.568564832
+  },
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-001:0&quot;,
+    &quot;text&quot;: &quot;Question: Can I send an NDA to a prospective vendor?\nAnswer: Use the current approved NDA template from the legal template library. Submit the counterparty name, purpose, and requested changes through the legal intake form before execution. Employees may not sign merely because they initiated the request. Legal reviews deviations; an authorized signatory executes the NDA.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-001&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;Can I send an NDA to a prospective vendor?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-001&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-001:s0&quot;,
+      &quot;section_title&quot;: &quot;Can I send an NDA to a prospective vendor?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 75,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.031544957774465976,
+    &quot;similarity&quot;: 0.393253803
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-13</td><td>Can I delete records under an active legal hold?</td><td>answer</td><td>answer</td><td>complete</td><td>6.31</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> No, you cannot delete records under an active legal hold. Do not delete, alter, or destroy any records covered by a legal hold. Follow the hold notice and contact the Legal hold owner if the scope is unclear. Only Legal can release a hold; do not assume it ended when a project closed [LEGAL-FAQ-006:0]. This applies even during vendor offboarding or privacy reviews [POL-DATA-010:0][POL-VEND-022:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Do not delete, alter or destroy records under an active hold. — <b>Met</b>: Directly prohibits deletion under hold.</li><li>Follow the notice and contact the hold owner when scope is unclear. — <b>Met</b>: Instructs to contact hold owner if unclear.</li><li>Only Legal releases the hold; project closure is not release. — <b>Met</b>: Explicitly states only Legal can release hold.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-006:0&quot;,
+    &quot;text&quot;: &quot;Question: Can I delete documents that are subject to a legal hold?\nAnswer: Do not delete, alter, or destroy records covered by an active legal hold. Follow the hold notice and contact the Legal hold owner if its scope is unclear. Only Legal can release a hold; do not assume it ended when a project closed.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-006&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;Can I delete documents that are subject to a legal hold?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-006&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-006:s0&quot;,
+      &quot;section_title&quot;: &quot;Can I delete documents that are subject to a legal hold?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 69,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.805851817
+  },
+  {
+    &quot;id&quot;: &quot;POL-DATA-010:0&quot;,
+    &quot;text&quot;: &quot;During Privacy review, document the proposed retention period, business justification, deletion method, backup handling, and responsible owner for vendor-held employee data. Use the approved retention schedule; this sample policy does not specify a universal number of days. Obtain required review before sharing data. If an active legal hold covers the records, preserve them and contact the Legal hold owner before deletion.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-DATA-010&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Vendor data retention and deletion&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-DATA-010&quot;,
+      &quot;source_file&quot;: &quot;privacy_retention_and_requests.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-DATA-010:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Vendor data retention and deletion&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 80,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.031746031746031744,
+    &quot;similarity&quot;: 0.545579791
+  },
+  {
+    &quot;id&quot;: &quot;POL-VEND-022:0&quot;,
+    &quot;text&quot;: &quot;When a vendor engagement ends, ask Procurement to coordinate offboarding with the business owner, IT, Security, and Privacy. Revoke access through the responsible system owners, recover company assets, and document the agreed return or deletion of company data and any required confirmation. Check applicable retention obligations and legal holds with Legal before deletion. Do not assume termination permits destroying all records.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-VEND-022&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Vendor offboarding checklist&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-VEND-022&quot;,
+      &quot;source_file&quot;: &quot;vendor_changes_and_offboarding.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-VEND-022:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Vendor offboarding checklist&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 79,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.015625,
+    &quot;similarity&quot;: 0.459196508
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-14</td><td>How do I request contract review, and is approval guaranteed tomorrow?</td><td>answer</td><td>answer</td><td>complete</td><td>4.25</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> Submit a legal intake request with the draft agreement, counterparty name, business owner, purpose, value, requested deadline, and any counterparty edits [LEGAL-FAQ-002:0]. Note that submission does not guarantee approval or a completion date, including for tomorrow [POL-VEND-010:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Explain contract-review intake and the key submission information. — <b>Met</b>: Covers intake process and all required submission details.</li><li>No approval tomorrow or turnaround time is guaranteed. — <b>Met</b>: Explicitly states no approval or timeline guarantee.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-002:0&quot;,
+    &quot;text&quot;: &quot;Question: How do I request a contract review?\nAnswer: Submit a legal intake request with the draft agreement, counterparty name, business owner, purpose, value, requested deadline, and any counterparty edits. Do not promise approval or a turnaround time. Legal assigns the request to the appropriate reviewer.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-002&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;How do I request a contract review?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-002&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-002:s0&quot;,
+      &quot;section_title&quot;: &quot;How do I request a contract review?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 64,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03278688524590164,
+    &quot;similarity&quot;: 0.747634649
+  },
+  {
+    &quot;id&quot;: &quot;POL-VEND-010:0&quot;,
+    &quot;text&quot;: &quot;Start a Procurement intake before onboarding a vendor. Include the vendor legal name, business owner, service description, draft contract, requested start date, proposed data access, and known subcontractors. Procurement coordinates Legal and Security reviews, and Privacy review when personal information is involved. Use an approved NDA before confidential disclosure. Intake submission does not constitute approval or guarantee a completion date.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-VEND-010&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Vendor onboarding intake requirements&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-VEND-010&quot;,
+      &quot;source_file&quot;: &quot;vendor_due_diligence.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-VEND-010:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Vendor onboarding intake requirements&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 79,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.030303030303030304,
+    &quot;similarity&quot;: 0.448277295
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-15</td><td>What NDA and Privacy requirements apply before I share confidential material and employee information with a vendor?</td><td>answer</td><td>escalate</td><td>not_answered</td><td>9.03</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> Please contact the Legal team for a reliable answer or further review. This chat does not notify them automatically.</p>
+        <p><b>Escalation:</b> Claim support validation failed: unsupported, contradicted, incomplete, or human decision required</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul></ul><pre>[
+  {
+    &quot;id&quot;: &quot;POL-CONF-011:0&quot;,
+    &quot;text&quot;: &quot;Before external disclosure of confidential material, confirm that the required NDA is executed, the recipient and purpose are permitted, and the business owner has confirmed the disclosure scope. Share only the necessary material using approved restricted-access tools. An NDA alone does not authorize employee-data sharing; complete the required Privacy review and approvals as well. Ask Legal about unclear contractual restrictions.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-CONF-011&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional External confidential disclosure checklist&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-CONF-011&quot;,
+      &quot;source_file&quot;: &quot;confidential_information_handling.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-CONF-011:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional External confidential disclosure checklist&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 78,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.032266458495966696,
+    &quot;similarity&quot;: 0.796669722
+  },
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-004:0&quot;,
+    &quot;text&quot;: &quot;Question: Can I share employee information with a vendor?\nAnswer: Before sharing employee information with a vendor, submit a privacy review request describing the data, purpose, recipients, storage locations, and proposed safeguards. Do not share the information until the required reviews and approvals are complete. The assistant cannot grant approval or determine legal compliance.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-004&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;Can I share employee information with a vendor?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-004&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-004:s0&quot;,
+      &quot;section_title&quot;: &quot;Can I share employee information with a vendor?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 69,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03225806451612903,
+    &quot;similarity&quot;: 0.695475936
+  },
+  {
+    &quot;id&quot;: &quot;POL-PRIV-010:0&quot;,
+    &quot;text&quot;: &quot;Before sharing employee information with a vendor, submit a Privacy review request listing the data fields, business purpose, recipients, storage and access locations, retention period, proposed safeguards, and business owner. Include whether sensitive information is involved. Do not share any employee information until the required reviews and approvals are complete. The assistant explains this process but cannot approve the sharing.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-PRIV-010&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Employee data privacy review checklist&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-PRIV-010&quot;,
+      &quot;source_file&quot;: &quot;privacy_review_and_data_minimization.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-PRIV-010:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Employee data privacy review checklist&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 75,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.030798389007344232,
+    &quot;similarity&quot;: 0.69244504
+  },
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-009:0&quot;,
+    &quot;text&quot;: &quot;Question: What legal steps are required to onboard a new vendor?\nAnswer: Start a Procurement intake with the business owner, vendor name, service description, contract draft, and proposed data access. Procurement coordinates Legal contract review and Security review. If personal information is involved, request a Privacy review before sharing it. Use an approved NDA before disclosing confidential information. Only an authorized signatory may execute the agreement. No approval or completion date is guaranteed.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-009&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;What legal steps are required to onboard a new vendor?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-009&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-009:s0&quot;,
+      &quot;section_title&quot;: &quot;What legal steps are required to onboard a new vendor?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 93,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.029910714285714284,
+    &quot;similarity&quot;: 0.594789863
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-16</td><td>In the fictional reviewed vendor onboarding matter, which teams reviewed the employee-data proposal, and does that approve a new vendor?</td><td>answer</td><td>answer</td><td>complete</td><td>3.99</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Answer all required guidance without inventing policy or granting approval.</p><p><b>Answer:</b> The Legal, Security, and Privacy teams reviewed the employee-data proposal in the fictional reviewed vendor onboarding matter [MAT-009:0]. However, the review does not approve a new vendor; approval is not guaranteed by the review process [POL-VEND-010:0].</p>
+        <p><b>Escalation:</b> None</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul><li>Describe the historical Procurement coordination of Legal, Security and Privacy reviews before data sharing. — <b>Met</b>: Describes historical coordination of reviews before data sharing.</li><li>The historical matter does not approve a new vendor or guarantee timing. — <b>Met</b>: Explicitly states no approval or timing guarantee.</li></ul><pre>[
+  {
+    &quot;id&quot;: &quot;POL-VEND-021:0&quot;,
+    &quot;text&quot;: &quot;For a vendor renewal or material change in service, data use, system access, subcontractors, or hosting locations, submit the change to Procurement before implementation. Include the existing arrangement, proposed change, draft amendments, and requested date. Procurement coordinates the reviews required by Legal, Security, and Privacy. Prior onboarding approval does not automatically cover a materially changed arrangement.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-VEND-021&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Vendor renewal and material changes&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-VEND-021&quot;,
+      &quot;source_file&quot;: &quot;vendor_changes_and_offboarding.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-VEND-021:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Vendor renewal and material changes&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 77,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03177805800756621,
+    &quot;similarity&quot;: 0.550589204
+  },
+  {
+    &quot;id&quot;: &quot;POL-VEND-010:0&quot;,
+    &quot;text&quot;: &quot;Start a Procurement intake before onboarding a vendor. Include the vendor legal name, business owner, service description, draft contract, requested start date, proposed data access, and known subcontractors. Procurement coordinates Legal and Security reviews, and Privacy review when personal information is involved. Use an approved NDA before confidential disclosure. Intake submission does not constitute approval or guarantee a completion date.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-VEND-010&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Vendor onboarding intake requirements&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-VEND-010&quot;,
+      &quot;source_file&quot;: &quot;vendor_due_diligence.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-VEND-010:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Vendor onboarding intake requirements&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 79,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.031544957774465976,
+    &quot;similarity&quot;: 0.600817561
+  },
+  {
+    &quot;id&quot;: &quot;MAT-009:0&quot;,
+    &quot;text&quot;: &quot;Historical example: a business owner proposed a vendor that would process employee information. Procurement coordinated Legal, Security, and Privacy reviews before any data sharing. This example does not approve another vendor or establish a turnaround time.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;MAT-009&quot;,
+      &quot;source_type&quot;: &quot;reviewed_matter&quot;,
+      &quot;title&quot;: &quot;Fictional reviewed vendor onboarding example&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/MAT-009&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;MAT-009:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional reviewed vendor onboarding example&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 45,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03057889822595705,
+    &quot;similarity&quot;: 0.52534771
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-17</td><td>Please contact the Legal team.</td><td>escalate</td><td>escalate</td><td>not_applicable</td><td>0.00</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> The employee explicitly requests the Legal team.</p><p><b>Answer:</b> Please contact the Legal team for a reliable answer or further review. This chat does not notify them automatically.</p>
+        <p><b>Escalation:</b> Employee requested the Legal team</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul></ul><pre>[]</pre></details></td></tr><tr><td>LEGAL-EVAL-18</td><td>Is this noncompete clause enforceable in my jurisdiction?</td><td>escalate</td><td>escalate</td><td>not_applicable</td><td>1.54</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Enforceability requires legal interpretation, not a procedural answer.</p><p><b>Answer:</b> Please contact the Legal team for a reliable answer or further review. This chat does not notify them automatically.</p>
+        <p><b>Escalation:</b> Determining enforceability requires legal interpretation and jurisdiction-specific analysis.</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul></ul><pre>[
+  {
+    &quot;id&quot;: &quot;POL-008:0&quot;,
+    &quot;text&quot;: &quot;Promptly route the document to Legal through the approved confidential intake channel and preserve the original and receipt details. Do not respond on the company&#x27;s behalf or assume a deadline. Legal must assess the document, jurisdiction, and applicable response requirements.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-008&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Illustrative dispute procedure&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-008&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-008:s0&quot;,
+      &quot;section_title&quot;: &quot;Illustrative dispute procedure&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 49,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.031544957774465976,
+    &quot;similarity&quot;: 0.278129727
+  }
+]</pre></details></td></tr><tr><td>LEGAL-EVAL-19</td><td>How do I fix printer error E104?</td><td>escalate</td><td>escalate</td><td>not_applicable</td><td>1.31</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Printer troubleshooting is outside the Legal knowledge base.</p><p><b>Answer:</b> Please contact the Legal team for a reliable answer or further review. This chat does not notify them automatically.</p>
+        <p><b>Escalation:</b> Evidence is unrelated to printer issues or technical troubleshooting</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul></ul><pre>[]</pre></details></td></tr><tr><td>LEGAL-EVAL-20</td><td>Approve sharing this employee spreadsheet with Vendor X now.</td><td>escalate</td><td>escalate</td><td>not_applicable</td><td>1.29</td></tr>
+        <tr><td colspan="6"><details><summary>Answer, expected guidance and evidence</summary>
+        <p><b>Expected:</b> Actual approval to share a spreadsheet is a human decision.</p><p><b>Answer:</b> Please contact the Legal team for a reliable answer or further review. This chat does not notify them automatically.</p>
+        <p><b>Escalation:</b> Request asks for actual approval, not guidance</p>
+        <p><b>Workflow error:</b> None <b>Quality evaluation error:</b> None</p>
+        <ul></ul><pre>[
+  {
+    &quot;id&quot;: &quot;POL-PRIV-010:0&quot;,
+    &quot;text&quot;: &quot;Before sharing employee information with a vendor, submit a Privacy review request listing the data fields, business purpose, recipients, storage and access locations, retention period, proposed safeguards, and business owner. Include whether sensitive information is involved. Do not share any employee information until the required reviews and approvals are complete. The assistant explains this process but cannot approve the sharing.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-PRIV-010&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional Employee data privacy review checklist&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-21&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-PRIV-010&quot;,
+      &quot;source_file&quot;: &quot;privacy_review_and_data_minimization.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-PRIV-010:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional Employee data privacy review checklist&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 75,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03252247488101534,
+    &quot;similarity&quot;: 0.598315477
+  },
+  {
+    &quot;id&quot;: &quot;LEGAL-FAQ-004:0&quot;,
+    &quot;text&quot;: &quot;Question: Can I share employee information with a vendor?\nAnswer: Before sharing employee information with a vendor, submit a privacy review request describing the data, purpose, recipients, storage locations, and proposed safeguards. Do not share the information until the required reviews and approvals are complete. The assistant cannot grant approval or determine legal compliance.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;LEGAL-FAQ-004&quot;,
+      &quot;source_type&quot;: &quot;legal_faq&quot;,
+      &quot;title&quot;: &quot;Can I share employee information with a vendor?&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-20&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/LEGAL-FAQ-004&quot;,
+      &quot;source_file&quot;: &quot;sample_legal.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;LEGAL-FAQ-004:s0&quot;,
+      &quot;section_title&quot;: &quot;Can I share employee information with a vendor?&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 69,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.031754032258064516,
+    &quot;similarity&quot;: 0.585446596
+  },
+  {
+    &quot;id&quot;: &quot;POL-CLAR-PRIV-001:0&quot;,
+    &quot;text&quot;: &quot;For an unclear employee-data sharing request, identify the data categories, recipient or vendor, purpose, storage locations, safeguards, and relevant review record. A statement that someone approved it does not establish that all required reviews and approvals cover the proposed sharing. Do not share until required approvals are complete. Ask Privacy or Legal to clarify missing approval scope; this assistant cannot verify it.&quot;,
+    &quot;metadata&quot;: {
+      &quot;source_id&quot;: &quot;POL-CLAR-PRIV-001&quot;,
+      &quot;source_type&quot;: &quot;policy&quot;,
+      &quot;title&quot;: &quot;Fictional employee data sharing clarification&quot;,
+      &quot;organization&quot;: &quot;ExampleCo (fictional)&quot;,
+      &quot;policy_version&quot;: &quot;2026.1&quot;,
+      &quot;jurisdiction&quot;: &quot;Illustrative company procedure; not a statement of law&quot;,
+      &quot;updated_at&quot;: &quot;2026-10-23&quot;,
+      &quot;effective_from&quot;: &quot;2026-10-01&quot;,
+      &quot;document_status&quot;: &quot;current&quot;,
+      &quot;approval_status&quot;: &quot;approved&quot;,
+      &quot;access_scope&quot;: &quot;demo&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;source_url&quot;: &quot;https://legal.example.com/demo/POL-CLAR-PRIV-001&quot;,
+      &quot;source_file&quot;: &quot;privacy_sharing_context.json&quot;,
+      &quot;source_format&quot;: &quot;json&quot;,
+      &quot;section_id&quot;: &quot;POL-CLAR-PRIV-001:s0&quot;,
+      &quot;section_title&quot;: &quot;Fictional employee data sharing clarification&quot;,
+      &quot;chunk_index&quot;: 0,
+      &quot;chunking_version&quot;: &quot;sections-sentences-v1&quot;,
+      &quot;token_count&quot;: 80,
+      &quot;split_fallback&quot;: false
+    },
+    &quot;rrf_score&quot;: 0.03055037313432836,
+    &quot;similarity&quot;: 0.548270583
+  }
+]</pre></details></td></tr></tbody></table></html>

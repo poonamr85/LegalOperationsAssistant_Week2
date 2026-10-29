@@ -1,35 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1920" viewBox="0 0 1800 1920"><title>Simple knowledge-base workflow</title><desc>One linear flow from fictional documents to validated passages, embeddings, persistent storage and hybrid search.</desc><rect width="100%" height="100%" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1920" viewBox="0 0 1800 1920"><title>Simple knowledge-base workflow</title><desc>One linear flow from fictional documents to validated passages, embeddings, persistent storage and hybrid search.</desc><rect width="100%" height="100%" fill="white" />
 <text x="900" y="91.64" text-anchor="middle" font-family="Arial,sans-serif" font-size="53" font-weight="700" fill="#10233F">Knowledge base: a simple workflow</text>
 <text x="900" y="153.16" text-anchor="middle" font-family="Arial,sans-serif" font-size="32" font-weight="400" fill="#53657A">How the sample documents become searchable</text>
-<rect x="140" y="225" width="1520" height="200" rx="22" fill="#F0F5FC" stroke="#A6BDD9" stroke-width="3"/>
+<rect x="140" y="225" width="1520" height="200" rx="22" fill="#F0F5FC" stroke="#A6BDD9" stroke-width="3" />
 <text x="900" y="285.56" text-anchor="middle" font-family="Arial,sans-serif" font-size="37" font-weight="700" fill="#10233F">1. Add or update documents</text>
 <text x="900" y="347.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Fictional FAQs, policies and reviewed matters</text>
 <text x="900" y="387.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Stored as JSON and text-based PDFs</text>
-<path d="M900 425 V473" fill="none" stroke="#53657A" stroke-width="4"/><polygon points="900,485 889,466 911,466" fill="#53657A"/>
-<rect x="140" y="485" width="1520" height="200" rx="22" fill="#F0F5FC" stroke="#A6BDD9" stroke-width="3"/>
+<path d="M900 425 V473" fill="none" stroke="#53657A" stroke-width="4" /><polygon points="900,485 889,466 911,466" fill="#53657A" />
+<rect x="140" y="485" width="1520" height="200" rx="22" fill="#F0F5FC" stroke="#A6BDD9" stroke-width="3" />
 <text x="900" y="545.56" text-anchor="middle" font-family="Arial,sans-serif" font-size="37" font-weight="700" fill="#10233F">2. Read and check the content</text>
 <text x="900" y="607.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Extract text and check eligibility, dates and IDs</text>
 <text x="900" y="647.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Skip blank PDF pages; reject invalid input</text>
-<path d="M900 685 V733" fill="none" stroke="#53657A" stroke-width="4"/><polygon points="900,745 889,726 911,726" fill="#53657A"/>
-<rect x="140" y="745" width="1520" height="200" rx="22" fill="#EFF6E9" stroke="#AEC59E" stroke-width="3"/>
+<path d="M900 685 V733" fill="none" stroke="#53657A" stroke-width="4" /><polygon points="900,745 889,726 911,726" fill="#53657A" />
+<rect x="140" y="745" width="1520" height="200" rx="22" fill="#EFF6E9" stroke="#AEC59E" stroke-width="3" />
 <text x="900" y="805.56" text-anchor="middle" font-family="Arial,sans-serif" font-size="37" font-weight="700" fill="#10233F">3. Split into useful passages</text>
 <text x="900" y="867.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Keep short FAQs and related sentences together</text>
 <text x="900" y="907.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Retain document, section and page details</text>
-<path d="M900 945 V993" fill="none" stroke="#53657A" stroke-width="4"/><polygon points="900,1005 889,986 911,986" fill="#53657A"/>
-<rect x="140" y="1005" width="1520" height="200" rx="22" fill="#F3EFF9" stroke="#B9A6D1" stroke-width="3"/>
+<path d="M900 945 V993" fill="none" stroke="#53657A" stroke-width="4" /><polygon points="900,1005 889,986 911,986" fill="#53657A" />
+<rect x="140" y="1005" width="1520" height="200" rx="22" fill="#F3EFF9" stroke="#B9A6D1" stroke-width="3" />
 <text x="900" y="1065.56" text-anchor="middle" font-family="Arial,sans-serif" font-size="37" font-weight="700" fill="#10233F">4. Make each passage searchable</text>
 <text x="900" y="1127.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">MiniLM creates an embedding — numbers representing meaning</text>
 <text x="900" y="1167.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Keep the readable text and source details with it</text>
-<path d="M900 1205 V1253" fill="none" stroke="#53657A" stroke-width="4"/><polygon points="900,1265 889,1246 911,1246" fill="#53657A"/>
-<rect x="140" y="1265" width="1520" height="200" rx="22" fill="#EAF4FC" stroke="#8EB4CF" stroke-width="3"/>
+<path d="M900 1205 V1253" fill="none" stroke="#53657A" stroke-width="4" /><polygon points="900,1265 889,1246 911,1246" fill="#53657A" />
+<rect x="140" y="1265" width="1520" height="200" rx="22" fill="#EAF4FC" stroke="#8EB4CF" stroke-width="3" />
 <text x="900" y="1325.56" text-anchor="middle" font-family="Arial,sans-serif" font-size="37" font-weight="700" fill="#10233F">5. Save and activate the knowledge base</text>
-<text x="900" y="1387.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Chroma stores embeddings, text and source details together</text>
-<text x="900" y="1427.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">index.json records the active collection and passages</text>
-<path d="M900 1465 V1513" fill="none" stroke="#53657A" stroke-width="4"/><polygon points="900,1525 889,1506 911,1506" fill="#53657A"/>
-<rect x="140" y="1525" width="1520" height="200" rx="22" fill="#FFFBEF" stroke="#CDBB77" stroke-width="3"/>
+<text x="900" y="1387.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Pinecone stores MiniLM vectors, text and source details</text>
+<text x="900" y="1427.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">index.json records the active namespace and local passages</text>
+<path d="M900 1465 V1513" fill="none" stroke="#53657A" stroke-width="4" /><polygon points="900,1525 889,1506 911,1506" fill="#53657A" />
+<rect x="140" y="1525" width="1520" height="200" rx="22" fill="#FFFBEF" stroke="#CDBB77" stroke-width="3" />
 <text x="900" y="1585.56" text-anchor="middle" font-family="Arial,sans-serif" font-size="37" font-weight="700" fill="#10233F">6. Ready for hybrid search</text>
-<text x="900" y="1647.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Search by meaning with Chroma and by words with BM25</text>
+<text x="900" y="1647.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Search by meaning with Pinecone and by words with BM25</text>
 <text x="900" y="1687.4" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#10233F">Combine results to find evidence for employee questions</text>
-<rect x="140" y="1805" width="1520" height="80" rx="22" fill="#F5F7FA" stroke="#D6DEE8" stroke-width="3"/>
-<text x="900" y="1849.76" text-anchor="middle" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#53657A">An administrator refreshes the index after document changes; updates are not automatic.</text>
+<rect x="140" y="1805" width="1520" height="80" rx="22" fill="#F5F7FA" stroke="#D6DEE8" stroke-width="3" />
+<text x="900" y="1849.76" text-anchor="middle" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#53657A">Admin uploads after changes; startup verifies the existing snapshot without uploading.</text>
 </svg>

@@ -1,0 +1,106 @@
+{
+  "document_date": "2026-10-29",
+  "title": "Pinecone framework verification \u2014 recorded checks",
+  "scope": "Recorded verification plus the fresh 20-question full-workflow evaluation; original historical outputs are preserved.",
+  "vector_store": "Pinecone",
+  "index_name": "legal-operations-minilm-vectors",
+  "namespace": "legal-demo-93432ab5ec637cf2463d",
+  "index_manifest_sha256": "8a4925a24f3279da78468bc8dde2763889970bddee5fea6d78075145ac08af54",
+  "checks": [
+    {
+      "check": "Uploaded passage IDs and readiness",
+      "passed": 49,
+      "total": 49,
+      "kind": "Pinecone upload/read verification"
+    },
+    {
+      "check": "Local regression tests",
+      "passed": 91,
+      "total": 91,
+      "kind": "Mocked service calls plus local UI/embedding/build checks"
+    },
+    {
+      "check": "Expected-source retrieval smoke checks",
+      "passed": 16,
+      "total": 16,
+      "kind": "Real Pinecone reads; no Nebius calls"
+    },
+    {
+      "check": "Complete-evidence retrieval checks",
+      "passed": 6,
+      "total": 6,
+      "kind": "Real Pinecone reads; no Nebius calls"
+    },
+    {
+      "check": "Deployment startup snapshot verification",
+      "status": "Passed",
+      "kind": "Existing remote snapshot; no vector re-upload"
+    },
+    {
+      "check": "Dependency compatibility and fresh venv bootstrap",
+      "status": "Passed locally",
+      "kind": "Streamlit 1.66.1 / Pillow 13.0.0; not a production build measurement"
+    }
+  ],
+  "not_measured": [
+    "Independent claim-level faithfulness or Legal-reviewed accuracy",
+    "End-user-confirmed resolution",
+    "Published Replit end-to-end response latency and behavior"
+  ],
+  "faithfulness_target_percent": 95,
+  "faithfulness_achieved_percent": null,
+  "historical_reports": [
+    {
+      "path": "storage/evaluations/claim_validation_benchmark.json",
+      "classification": "Historical answer/validator results; not current framework measurements"
+    },
+    {
+      "path": "storage/evaluations/resolution_20_queries/resolution_report.json",
+      "classification": "Historical answer/validator results; not current framework measurements"
+    },
+    {
+      "path": "storage/evaluations/grouped_review/grouped_report.json",
+      "classification": "Historical answer/validator results; not current framework measurements"
+    },
+    {
+      "path": "storage/evaluations/resolution_20261023T211558Z/resolution_report.json",
+      "classification": "Historical answer/validator results; not current framework measurements"
+    }
+  ],
+  "retrieval_artifacts_note": "storage/chunking_comparison.json was refreshed during Pinecone retrieval checks. Its earlier before baseline used a different corpus; differences cannot be attributed solely to chunking or vector-store changes.",
+  "limitations": "91/91 and retrieval pass rates are test results, not answer accuracy or achieved faithfulness. Ambiguous scenarios remain unmeasured in saved grouped results.",
+  "hosting_status": {
+    "platform": "Replit",
+    "source": "Reported by project owner",
+    "published_url": null,
+    "deployment_type": null,
+    "independently_verified": false
+  },
+  "latest_full_workflow": {
+    "created_at": "2026-10-29T23:23:41.935958+00:00",
+    "report_folder": "storage/evaluations/pinecone_full_workflow_20261029_232340",
+    "execution_environment": "Local development machine; remote Pinecone and Nebius. Not a Replit-hosted latency measurement.",
+    "metrics": {
+      "evaluated_queries": 20,
+      "expected_answerable": 16,
+      "expected_escalations": 4,
+      "resolved_count": 15,
+      "automated_verified_resolution_rate_percent": 75.0,
+      "answerable_resolution_rate_percent": 93.75,
+      "correct_escalation_count": 4,
+      "correct_escalation_rate_percent": 100.0,
+      "unnecessary_escalation_count": 1,
+      "unnecessary_escalation_rate_percent": 6.25,
+      "processing_failures": 0,
+      "processing_failure_rate_percent": 0.0,
+      "quality_evaluation_failures": 0,
+      "correct_handling_rate_percent": 95.0,
+      "actual_answer_count": 15,
+      "partial_answer_count": 0,
+      "median_response_seconds": 5.3174,
+      "p95_response_seconds": 8.2793,
+      "max_response_seconds": 9.032
+    },
+    "review_status": "Automated development assessment; not independently reviewed"
+  }
+}

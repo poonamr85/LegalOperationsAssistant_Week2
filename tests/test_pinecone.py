@@ -12,7 +12,7 @@ from legal_assistant.embeddings import embed_texts, MODEL_ID
 from tests.test_bot import PASSAGES
 
 
-class PineconeMigrationTests(unittest.TestCase):
+class PineconeStorageTests(unittest.TestCase):
     def index(self):
         index=MagicMock()
         index.describe_index_stats.side_effect=lambda: {'namespaces':{self.namespace:{'vector_count':len(PASSAGES)}}}

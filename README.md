@@ -1,31 +1,40 @@
 # Internal Legal Operations Assistant
 
 A fictional ExampleCo RAG prototype. Employees ask documented procedural questions
-through a Streamlit portal. Answers cite evidence and pass validation, or the app
+through a Streamlit portal hosted on Replit. Answers cite evidence and pass validation, or the app
 displays a Contact Legal fallback. It cannot approve or sign agreements, determine
 legal rights, authenticate employees or automatically notify Legal.
 
-## Pinecone migration status
+## Current framework
 
-The `feature/pinecone` branch replaces embedded Chroma with hosted Pinecone while
-retaining local MiniLM embeddings, BM25 keyword search, rank fusion and LangGraph.
-The original Chroma implementation remains on `main` until migration is approved.
+The application uses hosted Pinecone for semantic search, local MiniLM embeddings,
+BM25 keyword search, reciprocal rank fusion and LangGraph orchestration.
+Use the `feature/pinecone` branch for this application.
 
 The compatible index `legal-operations-minilm-vectors` is configured with 384
 dimensions, cosine similarity and AWS us-east-1. The initial 49 fictional passages
 were uploaded and their IDs verified. Startup, 16 retrieval smoke checks, six
-complete-evidence retrieval checks and 88 local tests passed. No live Nebius
-answer evaluation or Replit/Linux hosting verification was performed.
+complete-evidence retrieval checks and 91 local tests passed. A separate fresh 20-question Pinecone/Nebius
+workflow evaluation was completed on 29 October 2026. Hosting on Replit is reported
+by the project owner; independent hosted verification is not recorded.
 
-The former `legal-operations-minilm` hosted-Llama index remains untouched. Hosted
-embedding models are not interchangeable with MiniLM. The adapter rejects those
-schemas before writes and distinguishes legacy `_values` compatibility schemas
-from actual document indexes.
+The adapter accepts supplied dense vectors and validates the configured index.
+Hosted embedding schemas are rejected because document and question vectors must
+use the same MiniLM model and preprocessing.
+
+## Hosted access
+
+Hosting platform: Replit (reported by the project owner).
+Published URL: **to be added**. Deployment type: **to be confirmed**.
+Employees use the published URL; Preview is for development and `localhost:8501`
+is for running on your own computer. Hosted keys/settings come from Replit
+Secrets/Configurations; `.env` is for local development. Hosting does not add
+employee authentication, document permissions or automatic Legal notifications.
 
 ## Setup
 
-Run commands from the project root. Locally tested with Python 3.14; Replit/Linux
-installation and hosting remain to be verified. Direct dependencies are pinned;
+Run commands from the project root. Locally tested with Python 3.14; the owner confirmed Replit installation and
+snapshot access. Independent published-deployment verification is not recorded. Direct dependencies are pinned;
 transitive dependencies are not fully locked.
 
 ```bash
@@ -115,8 +124,8 @@ Short FAQs stay intact. Policies split by section/sentence with 220-token maximu
 and up to 40 tokens of sentence overlap. IDs and source/page metadata are retained.
 MiniLM uses WordPiece tokens, 256-token inference truncation, masked mean pooling
 and L2 normalization to produce 384-dimensional vectors. Questions and passages
-use identical processing. ONNX Runtime and tokenizers replace Chroma utilities;
-no Chroma Python import is needed. The same original ONNX model artifact is
+use identical processing. ONNX Runtime runs local inference and tokenizers handles WordPiece processing.
+The MiniLM ONNX model artifact is
 SHA-256 verified and downloaded over HTTPS on first use. Verified existing local
 assets can be reused. `MINILM_CACHE_DIR` optionally changes the cache location;
 otherwise it is `storage/models/minilm`. This cache is not bundled or committed.
@@ -159,11 +168,10 @@ python -m evaluation.eval_chunking
 ```
 
 The main set has 20 questions: 16 expected answers and 4 escalations. Five additional
-ambiguous scenarios are evaluation examples, not measured outputs. Saved reports
-predate this migration and do not measure Pinecone performance or correctness.
+ambiguous scenarios are evaluation examples, not measured outputs. Earlier saved reports
+remain historical; the fresh 29 October 2026 run is linked below.
 95% faithfulness remains a target, not an established result. Live evaluation
-(`python -m evaluation.resolution_eval --live`) incurs Nebius usage; it was not run
-for this migration. Latency has no hard end-to-end deadline; SDK timeouts bound
+(`python -m evaluation.resolution_eval --live`) incurs Nebius usage; the fresh run below used this workflow. Latency has no hard end-to-end deadline; SDK timeouts bound
 individual network operations.
 
 ## Project structure
@@ -182,8 +190,9 @@ individual network operations.
 | scripts/ | Preparation, startup and upload packaging |
 | data/ | Fictional source documents |
 | storage/ | Local manifest/model cache and saved evaluation artifacts |
-| docs/ | Historical learning documents/diagrams; Chroma diagrams predate migration |
+| docs/ | Updated Pinecone guide/diagrams and framework-check summary |
 | .streamlit/ / .replit | UI theme and deployment commands |
+| Hosting: Replit | Streamlit, LangGraph, MiniLM inference and BM25; external Pinecone/Nebius services |
 
 See [REPLIT_SETUP.md](REPLIT_SETUP.md). Build the upload ZIP after changes with
 `python -m scripts.package_replit`. No Git push, deployment or automatic creation
@@ -198,3 +207,25 @@ pinned dependencies with user installs disabled and check compatibility. Its run
 command is `.venv/bin/python -m scripts.start_app`. Base Python must include
 `venv` and `ensurepip`; package firewall settings are preserved.
 See REPLIT_SETUP.md for deployment secrets, port and access configuration.
+
+## Current documentation and report review
+
+The Word guide and diagrams in `docs/architecture/` now describe Pinecone.
+See [Pinecone framework checks](docs/reports/Pinecone_Framework_Checks.html) for
+recorded verification and historical report labels. Original resolution/validator
+reports are unchanged historical baselines; the new live report is saved separately.
+The refreshed chunking comparison includes Pinecone retrieval checks, but its
+before baseline used a different corpus. No causal improvement claim is made.
+
+## Latest full-workflow report
+
+[Fresh HTML report](storage/evaluations/pinecone_full_workflow_20261029_232340/resolution_report.html)
+([CSV](storage/evaluations/pinecone_full_workflow_20261029_232340/resolution_report.csv),
+[JSON](storage/evaluations/pinecone_full_workflow_20261029_232340/resolution_report.json)).
+All 20 cases completed: automated resolution 15/20 (75%), answerable resolution
+15/16 (93.75%), expected escalations 4/4 (100%), one additional escalation and no
+processing or quality-evaluator failures. Median/P95/maximum response times:
+5.32/8.28/9.03 seconds. These are local-machine timings against remote services,
+not Replit measurements. Automated development judgments are not independent
+accuracy or employee-confirmed resolution. Review LEGAL-EVAL-15 for the extra
+human-judgment escalation. Older reports remain historical.

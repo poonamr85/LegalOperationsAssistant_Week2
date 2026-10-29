@@ -3,7 +3,7 @@ import re
 from functools import lru_cache
 from pathlib import Path
 
-MAX_TOKENS = 220  # Includes special tokens; Chroma's MiniLM truncates at 256.
+MAX_TOKENS = 220  # Includes special tokens; MiniLM inference truncates at 256.
 OVERLAP_TOKENS = 40
 CHUNKING_VERSION = 'sections-sentences-v1'
 

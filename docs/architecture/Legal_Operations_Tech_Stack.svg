@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="2102"><rect width="100%" height="100%" fill="white" />
+<text x="85" y="100" font-family="Arial,sans-serif" font-size="54" font-weight="700" fill="#172B45">Technology stack | Pinecone framework</text>
+<text x="85" y="161" font-family="Arial,sans-serif" font-size="30" font-weight="400" fill="#172B45">Local MiniLM + BM25 · hosted Pinecone search · Nebius answers · LangGraph routing</text>
+<rect x="70" y="215" width="2460" height="75" fill="#10233f" />
+<text x="90" y="265" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="white">COMPONENT</text>
+<text x="650" y="265" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="white">CURRENT CHOICE</text>
+<text x="1510" y="265" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="white">ROLE</text>
+<rect x="70" y="290" width="2460" height="94" fill="#f2f5fc" />
+<text x="90" y="343" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Employee portal</text>
+<text x="650" y="343" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">Streamlit 1.66.1</text>
+<text x="1510" y="343" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Overview, topic shortcuts and assistant chat.</text>
+<rect x="70" y="478.0" width="2460" height="94" fill="#ffffff" />
+<text x="90" y="531.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Orchestration</text>
+<text x="650" y="531.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">LangGraph StateGraph</text>
+<text x="1510" y="531.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Routes retrieval, grading, generation, validation and fallback.</text>
+<rect x="70" y="572.0" width="2460" height="94" fill="#f2f5fc" />
+<text x="90" y="625.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Vector storage / semantic search</text>
+<text x="650" y="625.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">Pinecone · Python SDK 10.2.0</text>
+<text x="1510" y="625.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Hosted 384-dimensional cosine index; versioned namespaces.</text>
+<rect x="70" y="666.0" width="2460" height="94" fill="#ffffff" />
+<text x="90" y="719.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Keyword retrieval</text>
+<text x="650" y="719.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">rank-bm25 / BM25Okapi</text>
+<text x="1510" y="719.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Searches scoped local passages; ranking reused in memory.</text>
+<rect x="70" y="760.0" width="2460" height="94" fill="#f2f5fc" />
+<text x="90" y="813.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Hybrid ranking</text>
+<text x="650" y="813.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">Reciprocal rank fusion</text>
+<text x="1510" y="813.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Combines keyword and semantic rankings; normally top four passages.</text>
+<rect x="70" y="854.0" width="2460" height="94" fill="#ffffff" />
+<text x="90" y="907.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Embedding model</text>
+<text x="650" y="907.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">all-MiniLM-L6-v2</text>
+<text x="1510" y="907.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Same local 384-dimensional model for passages and questions.</text>
+<rect x="70" y="948.0" width="2460" height="94" fill="#f2f5fc" />
+<text x="90" y="1001.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Embedding runtime</text>
+<text x="650" y="1001.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">ONNX Runtime + NumPy</text>
+<text x="1510" y="1001.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Masked mean pooling and L2 normalization on CPU.</text>
+<rect x="70" y="1042.0" width="2460" height="94" fill="#ffffff" />
+<text x="90" y="1095.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Language model</text>
+<text x="650" y="1095.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">Qwen3-30B-A3B-Instruct-2507 · Nebius</text>
+<text x="1510" y="1095.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Evidence grading, cited drafts and claim-support validation.</text>
+<rect x="70" y="1136.0" width="2460" height="94" fill="#f2f5fc" />
+<text x="90" y="1189.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Structured output</text>
+<text x="650" y="1189.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">Pydantic</text>
+<text x="1510" y="1189.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Strict assessment, draft and validation schemas.</text>
+<rect x="70" y="1230.0" width="2460" height="94" fill="#ffffff" />
+<text x="90" y="1283.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">PDF extraction</text>
+<text x="650" y="1283.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">pypdf</text>
+<text x="1510" y="1283.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Page-level text extraction with metadata sidecars; no OCR.</text>
+<rect x="70" y="1324.0" width="2460" height="94" fill="#f2f5fc" />
+<text x="90" y="1377.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Provider client</text>
+<text x="650" y="1377.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">OpenAI-compatible Python SDK</text>
+<text x="1510" y="1377.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Calls Nebius; does not imply an OpenAI answer model.</text>
+<rect x="70" y="1418.0" width="2460" height="94" fill="#ffffff" />
+<text x="90" y="1471.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Token counting</text>
+<text x="650" y="1471.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">tokenizers</text>
+<text x="1510" y="1471.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">MiniLM WordPiece counting for chunk-size limits.</text>
+<rect x="70" y="1512.0" width="2460" height="94" fill="#f2f5fc" />
+<text x="90" y="1565.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Image dependency</text>
+<text x="650" y="1565.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">Pillow 13.0.0</text>
+<text x="1510" y="1565.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Pinned with Streamlit for deployment compatibility.</text>
+<rect x="70" y="1606.0" width="2460" height="94" fill="#ffffff" />
+<text x="90" y="1659.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Configuration</text>
+<text x="650" y="1659.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">python-dotenv / Replit Secrets</text>
+<text x="1510" y="1659.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Private credentials and environment configuration.</text>
+<rect x="70" y="1700.0" width="2460" height="94" fill="#f2f5fc" />
+<text x="90" y="1753.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Testing</text>
+<text x="650" y="1753.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">unittest + Streamlit AppTest</text>
+<text x="1510" y="1753.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">91 local regressions passed; no live Nebius calls.</text>
+<rect x="70" y="1794.0" width="2460" height="94" fill="#ffffff" />
+<text x="90" y="1847.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Evaluation / reporting</text>
+<text x="650" y="1847.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">Custom Python scripts</text>
+<text x="1510" y="1830.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">16 source and 6 complete-evidence retrieval checks passed on</text>
+<text x="1510" y="1862.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Pinecone.</text>
+<rect x="70" y="1888.0" width="2460" height="94" fill="#f2f5fc" />
+<text x="90" y="1941.0" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Documentation</text>
+<text x="650" y="1941.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">python-docx</text>
+<text x="1510" y="1941.0" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#172B45">Word project guide; separate from live answer generation.</text>
+<text x="85" y="2060.0" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">Fictional data only · historical answer/latency reports are separate</text>
+<rect x="70" y="384" width="2460" height="94" fill="#ffffff" /><text x="90" y="437" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#172B45">Application hosting</text><text x="650" y="437" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">Replit</text><text x="1510" y="437" font-family="Arial,sans-serif" font-size="27" font-weight="400" fill="#172B45">Hosts Streamlit, LangGraph, MiniLM and BM25.</text></svg>

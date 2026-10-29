@@ -1,0 +1,26 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Pinecone framework checks</title><style>body{font:17px system-ui;max-width:1050px;margin:40px auto;padding:20px;color:#172b45}h1,h2{color:#10233f}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccd5e2;padding:12px;text-align:left}th{background:#edf3fa}.note{background:#fff4dc;padding:18px}</style>
+<h1>Pinecone framework checks</h1><p>Documentation date: 29 October 2026</p>
+<p class="note">Includes recorded checks and a fresh 20-question Pinecone/Nebius workflow evaluation. Assessments are automated; this is not independent accuracy validation.</p>
+<p>Index: <b>legal-operations-minilm-vectors</b>; local manifest contains 49 passages.</p>
+<h2>Completed verification</h2><table><tr><th>Check</th><th>Recorded result</th><th>Scope</th></tr>
+<tr><td>Uploaded passage IDs and readiness</td><td>49/49 passed</td><td>Pinecone upload/read verification</td></tr>
+<tr><td>Local regression tests</td><td>91/91 passed</td><td>Mocked service calls plus local UI/embedding/build checks</td></tr>
+<tr><td>Expected-source retrieval smoke checks</td><td>16/16 passed</td><td>Real Pinecone reads; no Nebius calls</td></tr>
+<tr><td>Complete-evidence retrieval checks</td><td>6/6 passed</td><td>Real Pinecone reads; no Nebius calls</td></tr>
+<tr><td>Deployment startup snapshot verification</td><td>Passed</td><td>Existing remote snapshot; no vector re-upload</td></tr>
+<tr><td>Dependency compatibility and fresh venv bootstrap</td><td>Passed locally</td><td>Streamlit 1.66.1 / Pillow 13.0.0; not a production build measurement</td></tr>
+</table><p><b>Hosting:</b> Replit, as reported by the project owner. Published URL and deployment type are not recorded. No independent deployment check is included.</p><h2>Fresh full-workflow evaluation — 29 October 2026</h2>
+<p>Completed 20/20 cases. Local execution using remote Pinecone and Nebius; response times are not measurements of the Replit-hosted application.</p>
+<p><a href="../../storage/evaluations/pinecone_full_workflow_20261029_232340/resolution_report.html">Open the full HTML report</a> · <a href="../../storage/evaluations/pinecone_full_workflow_20261029_232340/resolution_report.csv">CSV</a> · <a href="../../storage/evaluations/pinecone_full_workflow_20261029_232340/resolution_report.json">JSON</a></p>
+<table><tr><th>Metric</th><th>Fresh result</th></tr><tr><td>Automated resolution</td><td>15/20 (75.0%)</td></tr><tr><td>Answerable resolution</td><td>15/16 (93.75%)</td></tr><tr><td>Correct escalation</td><td>4/4 (100.0%)</td></tr><tr><td>Unnecessary escalation</td><td>1/16 (6.25%)</td></tr><tr><td>Processing failures</td><td>0</td></tr><tr><td>Median / P95 / maximum</td><td>5.32 / 8.28 / 9.03 seconds</td></tr></table><p>One expected-answerable NDA/Privacy question escalated because the validator required human judgment. Review case LEGAL-EVAL-15. No workflow or quality-evaluator failures occurred.</p><h2>Not independently measured</h2><ul>
+
+
+<li>Independent claim-level faithfulness</li>
+<li>Published Replit end-to-end response latency and behavior</li>
+</ul><p><b>95% faithfulness remains a target; no achieved percentage is reported.</b></p>
+<h2>Earlier reports: historical results</h2><p>Keep these as historical baselines. Their original files and metrics are unchanged.</p><ul>
+<li><a href="../../storage/evaluations/claim_validation_benchmark.json">storage/evaluations/claim_validation_benchmark.json</a> — historical, not a current workflow rerun</li>
+<li><a href="../../storage/evaluations/resolution_20_queries/resolution_report.json">storage/evaluations/resolution_20_queries/resolution_report.json</a> — historical, not a current workflow rerun</li>
+<li><a href="../../storage/evaluations/grouped_review/grouped_report.json">storage/evaluations/grouped_review/grouped_report.json</a> — historical, not a current workflow rerun</li>
+<li><a href="../../storage/evaluations/resolution_20261023T211558Z/resolution_report.json">storage/evaluations/resolution_20261023T211558Z/resolution_report.json</a> — historical, not a current workflow rerun</li>
+</ul><h2>Retrieval comparison artifact</h2><p>storage/chunking_comparison.json was refreshed during Pinecone retrieval checks. Its earlier before baseline used a different corpus; differences cannot be attributed solely to chunking or vector-store changes.</p><p>91/91 and retrieval pass rates are test results, not answer accuracy or achieved faithfulness. Ambiguous scenarios remain unmeasured in saved grouped results.</p></html>
